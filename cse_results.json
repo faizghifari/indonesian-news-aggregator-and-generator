@@ -1,0 +1,754 @@
+{
+    "kind": "customsearch#search",
+    "url": {
+        "type": "application/json",
+        "template": "https://www.googleapis.com/customsearch/v1?q={searchTerms}&num={count?}&start={startIndex?}&lr={language?}&safe={safe?}&cx={cx?}&sort={sort?}&filter={filter?}&gl={gl?}&cr={cr?}&googlehost={googleHost?}&c2coff={disableCnTwTranslation?}&hq={hq?}&hl={hl?}&siteSearch={siteSearch?}&siteSearchFilter={siteSearchFilter?}&exactTerms={exactTerms?}&excludeTerms={excludeTerms?}&linkSite={linkSite?}&orTerms={orTerms?}&relatedSite={relatedSite?}&dateRestrict={dateRestrict?}&lowRange={lowRange?}&highRange={highRange?}&searchType={searchType}&fileType={fileType?}&rights={rights?}&imgSize={imgSize?}&imgType={imgType?}&imgColorType={imgColorType?}&imgDominantColor={imgDominantColor?}&alt=json"
+    },
+    "queries": {
+        "request": [
+            {
+                "title": "Google Custom Search - pelemahan KPK",
+                "totalResults": "1280000",
+                "searchTerms": "pelemahan KPK",
+                "count": 10,
+                "startIndex": 1,
+                "inputEncoding": "utf8",
+                "outputEncoding": "utf8",
+                "safe": "off",
+                "cx": "016438215565483745044:lavm19lsfno"
+            }
+        ],
+        "nextPage": [
+            {
+                "title": "Google Custom Search - pelemahan KPK",
+                "totalResults": "1280000",
+                "searchTerms": "pelemahan KPK",
+                "count": 10,
+                "startIndex": 11,
+                "inputEncoding": "utf8",
+                "outputEncoding": "utf8",
+                "safe": "off",
+                "cx": "016438215565483745044:lavm19lsfno"
+            }
+        ]
+    },
+    "context": {
+        "title": "Idntimes-test"
+    },
+    "searchInformation": {
+        "searchTime": 0.404426,
+        "formattedSearchTime": "0.40",
+        "totalResults": "1280000",
+        "formattedTotalResults": "1,280,000"
+    },
+    "items": [
+        {
+            "kind": "customsearch#result",
+            "title": "Diserang Fahri Hamzah, Wadah Pegawai Ngaku Fokus Tolak ...",
+            "htmlTitle": "Diserang Fahri Hamzah, Wadah Pegawai Ngaku Fokus Tolak ...",
+            "link": "https://news.detik.com/berita/d-4698683/diserang-fahri-hamzah-wadah-pegawai-ngaku-fokus-tolak-upaya-pelemahan-kpk",
+            "displayLink": "news.detik.com",
+            "snippet": "23 jam yang lalu ... Diserang Fahri Hamzah, Wadah Pegawai Ngaku Fokus Tolak Upaya Pelemahan \nKPK Foto: Wadah Pegawai (WP) KPK. (Ari Saputra/detikcom) ...",
+            "htmlSnippet": "23 jam yang lalu <b>...</b> Diserang Fahri Hamzah, Wadah Pegawai Ngaku Fokus Tolak Upaya <b>Pelemahan</b> <br>\n<b>KPK</b> Foto: Wadah Pegawai (WP) KPK. (Ari Saputra/detikcom)&nbsp;...",
+            "cacheId": "FeNqfigyn8MJ",
+            "formattedUrl": "https://news.detik.com/.../diserang-fahri-hamzah-wadah-pegawai-ngaku- fokus-tolak-upaya-pelemahan-kpk",
+            "htmlFormattedUrl": "https://news.detik.com/.../diserang-fahri-hamzah-wadah-pegawai-ngaku- fokus-tolak-upaya-<b>pelemahan</b>-<b>kpk</b>",
+            "pagemap": {
+                "cse_thumbnail": [
+                    {
+                        "width": "300",
+                        "height": "168",
+                        "src": "https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcRzhirQRZ7qy46ZT3j8dTOl7_43OL5HjEhtFAiD3EiE0ITLsWHbHvB8BUc"
+                    }
+                ],
+                "metatags": [
+                    {
+                        "og:type": "article",
+                        "og:site_name": "detiknews",
+                        "og:title": "Diserang Fahri Hamzah, Wadah Pegawai Ngaku Fokus Tolak Upaya Pelemahan KPK",
+                        "og:image": "https://akcdn.detik.net.id/api/wm/2019/07/01/c8a16523-7e99-4c52-908b-977da5168040_169.jpeg?wid=54&w=650&v=1&t=jpeg",
+                        "og:description": "Fahri Hamzah menyerang Wadah Pegawai (WP) KPK terkait kain hitam yang menutup logo KPK terkait revisi UU KPK. WP KPK enggan menanggapi serangan Fahri itu.",
+                        "og:url": "https://news.detik.com/berita/d-4698683/diserang-fahri-hamzah-wadah-pegawai-ngaku-fokus-tolak-upaya-pelemahan-kpk",
+                        "fb:app_id": "187960271237149",
+                        "fb:admins": "100000607566694",
+                        "og:image:type": "image/jpeg",
+                        "og:image:width": "650",
+                        "og:image:height": "366",
+                        "viewport": "width=device-width,minimum-scale=1,initial-scale=1",
+                        "copyright": "detiknews",
+                        "p:domain_verify": "405e0728202749df914f7811375e18a0",
+                        "kanalid": "2-605-10",
+                        "articleid": "4698683",
+                        "articletype": "longstory",
+                        "articledewasa": "dewasatidak",
+                        "articlehoax": "default",
+                        "createdate": "2019/09/09 12:48:43",
+                        "publishdate": "2019/09/09 12:55:43",
+                        "contenttype": "longstorynews",
+                        "platform": "msite",
+                        "hl_nhl_wp": "nonheadline-0",
+                        "hl_nhl_kanal": "nonheadline-0-2-605",
+                        "videopresent": "No",
+                        "idfokus": "790",
+                        "author": "Haris Fadhil",
+                        "thumbnailurl": "https://akcdn.detik.net.id/community/media/visual/2019/07/01/c8a16523-7e99-4c52-908b-977da5168040_169.jpeg?w=650",
+                        "article:author": "https://www.facebook.com/detikcom",
+                        "article:publisher": "https://www.facebook.com/detikcom",
+                        "pubdate": "2019-09-09T12-55-43Z",
+                        "twitter:card": "summary_large_image",
+                        "twitter:site": "@detikcom",
+                        "twitter:site:id": "@detikcom",
+                        "twitter:creator": "@detikcom",
+                        "twitter:description": "Fahri Hamzah menyerang Wadah Pegawai (WP) KPK terkait kain hitam yang menutup logo KPK terkait revisi UU KPK. WP KPK enggan menanggapi serangan Fahri itu.",
+                        "twitter:image": "https://akcdn.detik.net.id/api/wm/2019/07/01/c8a16523-7e99-4c52-908b-977da5168040_169.jpeg?wid=60&w=650&v=1&t=jpeg",
+                        "pagesize": "2",
+                        "pagenumber": "1",
+                        "dtk:acctype": "acc-detiknews",
+                        "dtk:kanalid": "10",
+                        "dtk:articleid": "4698683",
+                        "dtk:articletype": "longstory",
+                        "dtk:articledewasa": "dewasatidak",
+                        "dtk:articlehoax": "default",
+                        "dtk:createddate": "2019/09/09 12:48:43",
+                        "dtk:publishdate": "2019/09/09 12:55:43",
+                        "dtk:contenttype": "longstorynews",
+                        "dtk:platform": "msite"
+                    }
+                ],
+                "cse_image": [
+                    {
+                        "src": "https://akcdn.detik.net.id/api/wm/2019/07/01/c8a16523-7e99-4c52-908b-977da5168040_169.jpeg?wid=54&w=650&v=1&t=jpeg"
+                    }
+                ]
+            }
+        },
+        {
+            "kind": "customsearch#result",
+            "title": "Biro Hukum KPK Nilai Ada Upaya Pelemahan Pemberantasan ...",
+            "htmlTitle": "Biro Hukum <b>KPK</b> Nilai Ada Upaya <b>Pelemahan</b> Pemberantasan ...",
+            "link": "https://nasional.kompas.com/read/2019/09/08/14051751/biro-hukum-kpk-nilai-ada-upaya-pelemahan-pemberantasan-korupsi",
+            "displayLink": "nasional.kompas.com",
+            "snippet": "1 hari yang lalu ... 'Melihat apa yang terjadi belakangan ini adalah bagian dari pelemahan terhadap \nbukan saja KPK, tapi pemberantasan korupsi,' kata ...",
+            "htmlSnippet": "1 hari yang lalu <b>...</b> &#39;Melihat apa yang terjadi belakangan ini adalah bagian dari <b>pelemahan</b> terhadap <br>\nbukan saja <b>KPK</b>, tapi pemberantasan korupsi,&#39; kata&nbsp;...",
+            "cacheId": "-c0UHuGzb1wJ",
+            "formattedUrl": "https://nasional.kompas.com/.../biro-hukum-kpk-nilai-ada-upaya-pelemahan- pemberantasan-korupsi",
+            "htmlFormattedUrl": "https://nasional.kompas.com/.../biro-hukum-<b>kpk</b>-nilai-ada-upaya-<b>pelemahan</b>- pemberantasan-korupsi",
+            "pagemap": {
+                "cse_thumbnail": [
+                    {
+                        "width": "318",
+                        "height": "159",
+                        "src": "https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcQYqnMUlfEBD1Ox3hJjXUvqc4A5QDqwE6W3Zvhi9O4Z1dObUIoJuGC37ZIJ"
+                    }
+                ],
+                "metatags": [
+                    {
+                        "viewport": "width=device-width",
+                        "googlebot-news": "index, follow",
+                        "author": "Kompas Cyber Media",
+                        "language": "id",
+                        "geo.country": "id",
+                        "geo.placename": "Indonesia",
+                        "og:type": "article",
+                        "og:image": "https://asset.kompas.com/crops/M8ZIB6dr9PueXChGPc3ztHhKQ68=/528x130:2736x1602/780x390/filters:watermark(data/photo/2019/08/13/5d528b8341764.png,0,-0,1)/data/photo/2019/09/08/5d74a1031c4b2.jpg",
+                        "og:title": "Biro Hukum KPK Nilai Ada Upaya Pelemahan Pemberantasan Korupsi",
+                        "og:description": "'Melihat apa yang terjadi belakangan ini adalah bagian dari pelemahan terhadap bukan saja KPK, tapi pemberantasan korupsi,' kata Rasamala.",
+                        "og:url": "https://nasional.kompas.com/read/2019/09/08/14051751/biro-hukum-kpk-nilai-ada-upaya-pelemahan-pemberantasan-korupsi",
+                        "og:site_name": "KOMPAS.com",
+                        "fb:app_id": "324557847592228",
+                        "twitter:card": "summary_large_image",
+                        "twitter:site": "@kompascom",
+                        "twitter:creator": "@kompascom",
+                        "twitter:title": "Biro Hukum KPK Nilai Ada Upaya Pelemahan Pemberantasan Korupsi",
+                        "twitter:description": "'Melihat apa yang terjadi belakangan ini adalah bagian dari pelemahan terhadap bukan saja KPK, tapi pemberantasan korupsi,' kata Rasamala.",
+                        "twitter:image": "https://asset.kompas.com/crops/M8ZIB6dr9PueXChGPc3ztHhKQ68=/528x130:2736x1602/780x390/filters:watermark(data/photo/2019/08/13/5d528b8341764.png,0,-0,1)/data/photo/2019/09/08/5d74a1031c4b2.jpg",
+                        "content_category": "News",
+                        "content_subcategory": "Nasional",
+                        "content_location": "Jakarta",
+                        "content_author_id": "1502",
+                        "content_author": "Dylan Aprialdo Rachman",
+                        "content_editor_id": "394",
+                        "content_editor": "Fabian Januarius Kuwado",
+                        "content_type": "Standard",
+                        "content_publisheddate": "2019-09-08 14:05:17",
+                        "content_tag": "KPK, pemberantasan korupsi, pelemahan KPK",
+                        "content_total_words": "381"
+                    }
+                ],
+                "listitem": [
+                    {
+                        "item": "Home",
+                        "name": "Home",
+                        "position": "1"
+                    },
+                    {
+                        "item": "News",
+                        "name": "News",
+                        "position": "2"
+                    },
+                    {
+                        "item": "Nasional",
+                        "name": "Nasional",
+                        "position": "3"
+                    }
+                ],
+                "cse_image": [
+                    {
+                        "src": "https://asset.kompas.com/crops/M8ZIB6dr9PueXChGPc3ztHhKQ68=/528x130:2736x1602/780x390/filters:watermark(data/photo/2019/08/13/5d528b8341764.png,0,-0,1)/data/photo/2019/09/08/5d74a1031c4b2.jpg"
+                    }
+                ]
+            }
+        },
+        {
+            "kind": "customsearch#result",
+            "title": "Kasus Novel Baswedan-Revisi UU Dinilai sebagai Upaya ...",
+            "htmlTitle": "Kasus Novel Baswedan-Revisi UU Dinilai sebagai Upaya ...",
+            "link": "https://news.detik.com/berita/d-4697859/kasus-novel-baswedan-revisi-uu-dinilai-sebagai-upaya-pelemahan-kpk",
+            "displayLink": "news.detik.com",
+            "snippet": "1 hari yang lalu ... KPK menilai upaya pelemahan telah dilakukan secara sistematis sebelum revisi \nUU KPK disepakati menjadi inisiatif DPR.",
+            "htmlSnippet": "1 hari yang lalu <b>...</b> <b>KPK</b> menilai upaya <b>pelemahan</b> telah dilakukan secara sistematis sebelum revisi <br>\nUU <b>KPK</b> disepakati menjadi inisiatif DPR.",
+            "cacheId": "lb6NU3ASpEwJ",
+            "formattedUrl": "https://news.detik.com/.../kasus-novel-baswedan-revisi-uu-dinilai-sebagai- upaya-pelemahan-kpk",
+            "htmlFormattedUrl": "https://news.detik.com/.../kasus-novel-baswedan-revisi-uu-dinilai-sebagai- upaya-<b>pelemahan</b>-<b>kpk</b>",
+            "pagemap": {
+                "cse_thumbnail": [
+                    {
+                        "width": "300",
+                        "height": "168",
+                        "src": "https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcTLTn7BKcKEvUx9EkTbmmfupTpsXjZUNUNDY3yPoTCwOw6UdsSS8I7kfxc"
+                    }
+                ],
+                "metatags": [
+                    {
+                        "og:type": "article",
+                        "og:site_name": "detiknews",
+                        "og:title": "Kasus Novel Baswedan-Revisi UU Dinilai sebagai Upaya Pelemahan KPK",
+                        "og:image": "https://awsimages.detik.net.id/api/wm/2019/09/08/b33d48c7-6ba4-49dd-bcad-f2af3744ced1_169.jpeg?wid=54&w=650&v=1&t=jpeg",
+                        "og:description": "KPK menilai upaya pelemahan telah dilakukan secara sistematis sebelum revisi UU KPK disepakati menjadi inisiatif DPR.",
+                        "og:url": "https://news.detik.com/berita/d-4697859/kasus-novel-baswedan-revisi-uu-dinilai-sebagai-upaya-pelemahan-kpk",
+                        "fb:app_id": "187960271237149",
+                        "fb:admins": "100000607566694",
+                        "og:image:type": "image/jpeg",
+                        "og:image:width": "650",
+                        "og:image:height": "366",
+                        "viewport": "width=device-width,minimum-scale=1,initial-scale=1",
+                        "copyright": "detiknews",
+                        "p:domain_verify": "405e0728202749df914f7811375e18a0",
+                        "kanalid": "2-605-10",
+                        "articleid": "4697859",
+                        "articletype": "longstory",
+                        "articledewasa": "dewasatidak",
+                        "articlehoax": "default",
+                        "createdate": "2019/09/08 13:58:52",
+                        "publishdate": "2019/09/08 14:07:10",
+                        "contenttype": "longstorynews",
+                        "platform": "desktop",
+                        "hl_nhl_wp": "nonheadline-0",
+                        "hl_nhl_kanal": "nonheadline-0-2-605",
+                        "videopresent": "No",
+                        "idfokus": "790",
+                        "author": "Yulida Medistiara",
+                        "thumbnailurl": "https://awsimages.detik.net.id/community/media/visual/2019/09/08/b33d48c7-6ba4-49dd-bcad-f2af3744ced1_169.jpeg?w=650",
+                        "article:author": "https://www.facebook.com/detikcom",
+                        "article:publisher": "https://www.facebook.com/detikcom",
+                        "pubdate": "2019-09-08T14-07-10Z",
+                        "twitter:card": "summary_large_image",
+                        "twitter:site": "@detikcom",
+                        "twitter:site:id": "@detikcom",
+                        "twitter:creator": "@detikcom",
+                        "twitter:description": "KPK menilai upaya pelemahan telah dilakukan secara sistematis sebelum revisi UU KPK disepakati menjadi inisiatif DPR.",
+                        "twitter:image": "https://awsimages.detik.net.id/api/wm/2019/09/08/b33d48c7-6ba4-49dd-bcad-f2af3744ced1_169.jpeg?wid=60&w=650&v=1&t=jpeg",
+                        "pagesize": "2",
+                        "pagenumber": "1",
+                        "dtk:acctype": "acc-detiknews",
+                        "dtk:kanalid": "10",
+                        "dtk:articleid": "4697859",
+                        "dtk:articletype": "longstory",
+                        "dtk:articledewasa": "dewasatidak",
+                        "dtk:articlehoax": "default",
+                        "dtk:createddate": "2019/09/08 13:58:52",
+                        "dtk:publishdate": "2019/09/08 14:07:10",
+                        "dtk:contenttype": "longstorynews",
+                        "dtk:platform": "desktop"
+                    }
+                ],
+                "cse_image": [
+                    {
+                        "src": "https://awsimages.detik.net.id/api/wm/2019/09/08/b33d48c7-6ba4-49dd-bcad-f2af3744ced1_169.jpeg?wid=54&w=650&v=1&t=jpeg"
+                    }
+                ]
+            }
+        },
+        {
+            "kind": "customsearch#result",
+            "title": "8 Upaya Pelemahan KPK Oleh DPR Menurut Catatan ICW ...",
+            "htmlTitle": "8 Upaya <b>Pelemahan KPK</b> Oleh DPR Menurut Catatan ICW ...",
+            "link": "https://nasional.tempo.co/read/885616/8-upaya-pelemahan-kpk-oleh-dpr-menurut-catatan-icw",
+            "displayLink": "nasional.tempo.co",
+            "snippet": "18 Jun 2017 ... TEMPO.CO, Jakarta - Hak angket KPK yang diusulkan DPR masih bergulir. \nKalangan lembaga masyarakat maupun pakar hukum ada yang ...",
+            "htmlSnippet": "18 Jun 2017 <b>...</b> TEMPO.CO, Jakarta - Hak angket <b>KPK</b> yang diusulkan DPR masih bergulir. <br>\nKalangan lembaga masyarakat maupun pakar hukum ada yang&nbsp;...",
+            "cacheId": "bOuwJMG4VVsJ",
+            "formattedUrl": "https://nasional.tempo.co/.../8-upaya-pelemahan-kpk-oleh-dpr-menurut- catatan-icw",
+            "htmlFormattedUrl": "https://nasional.tempo.co/.../8-upaya-<b>pelemahan</b>-<b>kpk</b>-oleh-dpr-menurut- catatan-icw",
+            "pagemap": {
+                "cse_thumbnail": [
+                    {
+                        "width": "297",
+                        "height": "170",
+                        "src": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS9wplOglMo02Ecc4rABpZwElDd5QGD91WDPzewJDiEf3zibfpi8GoVi9k"
+                    }
+                ],
+                "metatags": [
+                    {
+                        "viewport": "width=device-width, initial-scale=1.0",
+                        "author": "Kukuh S Wibowo Surabaya",
+                        "fb:app_id": "332404380172618",
+                        "fb:pages": "160355148441",
+                        "og:locale": "id_ID",
+                        "yahoobot": "index, follow",
+                        "dable:item_id": "885616",
+                        "og:type": "article",
+                        "og:url": "https://nasional.tempo.co/read/885616/8-upaya-pelemahan-kpk-oleh-dpr-menurut-catatan-icw",
+                        "og:title": "8 Upaya Pelemahan KPK Oleh DPR Menurut Catatan ICW",
+                        "og:image": "https://statik.tempo.co/data/2017/06/11/id_614838/614838_620.jpg",
+                        "og:image:width": "620",
+                        "og:image:height": "354",
+                        "og:site_name": "Tempo",
+                        "og:description": "ICW mencatat setidaknya ada delapan manuver yang dilakukan DPR untuk melemahkan kerja-kerja pemberantasan korupsi.",
+                        "article:section": "Nasional",
+                        "article:section2": "Politik",
+                        "article:published_time": "2017-06-18T21:50:26+07:00",
+                        "twitter:card": "summary_large_image",
+                        "twitter:site": "@tempodotco",
+                        "twitter:title": "8 Upaya Pelemahan KPK Oleh DPR Menurut Catatan ICW",
+                        "twitter:description": "ICW mencatat setidaknya ada delapan manuver yang dilakukan DPR untuk melemahkan kerja-kerja pemberantasan korupsi.",
+                        "twitter:image:src": "https://statik.tempo.co/data/2017/06/11/id_614838/614838_620.jpg",
+                        "adx:sections": "nasional"
+                    }
+                ],
+                "newsarticle": [
+                    {
+                        "headline": "8 Upaya Pelemahan KPK Oleh DPR Menurut Catatan ICW",
+                        "author": "Tempo.co",
+                        "datepublished": "Minggu, 18 Juni 2017 21:50 WIB",
+                        "articlebody": "TEMPO.CO, Jakarta - Hak angket KPK yang diusulkan DPR masih bergulir. Kalangan lembaga masyarakat maupun pakar hukum ada yang menilai angket KPK salah alamat, sebab KPK tidak semestinya menjadi...",
+                        "keywords": "Korupsi"
+                    }
+                ],
+                "listitem": [
+                    {
+                        "item": "Home",
+                        "name": "Home"
+                    },
+                    {
+                        "item": "Nasional",
+                        "name": "Nasional"
+                    },
+                    {
+                        "name": "Politik"
+                    }
+                ],
+                "imageobject": [
+                    {
+                        "image": "https://statik.tempo.co/data/2017/06/11/id_614838/614838_620.jpg",
+                        "caption": "Dari kiri, Akademisi hukum Universitas Trisakti, Abdul Fickar Hadjar, Peneliti Bidang Korupsi dan Politik Indonesia Corruption Watch (ICW), Almas Sjafrin, Kurnia Ramadhana dan Direktur Eksekutif..."
+                    }
+                ],
+                "cse_image": [
+                    {
+                        "src": "https://statik.tempo.co/data/2017/06/11/id_614838/614838_620.jpg"
+                    }
+                ]
+            }
+        },
+        {
+            "kind": "customsearch#result",
+            "title": "Pelemahan KPK dan Pasal Kontroversial RKUHP",
+            "htmlTitle": "<b>Pelemahan KPK</b> dan Pasal Kontroversial RKUHP",
+            "link": "https://www.cnnindonesia.com/nasional/20180606185518-32-304099/pelemahan-kpk-dan-pasal-kontroversial-rkuhp",
+            "displayLink": "www.cnnindonesia.com",
+            "snippet": "7 Jun 2018 ... Pelemahan KPK dan Pasal Kontroversial RKUHP Pasal yang mengatur \npemberantasan korupsi dalam RKUHP dinilai melemahkan KPK.",
+            "htmlSnippet": "7 Jun 2018 <b>...</b> <b>Pelemahan KPK</b> dan Pasal Kontroversial RKUHP Pasal yang mengatur <br>\npemberantasan korupsi dalam RKUHP dinilai melemahkan KPK.",
+            "cacheId": "BZK5goVXl3sJ",
+            "formattedUrl": "https://www.cnnindonesia.com/.../pelemahan-kpk-dan-pasal-kontroversial- rkuhp",
+            "htmlFormattedUrl": "https://www.cnnindonesia.com/.../<b>pelemahan</b>-<b>kpk</b>-dan-pasal-kontroversial- rkuhp",
+            "pagemap": {
+                "cse_thumbnail": [
+                    {
+                        "width": "300",
+                        "height": "168",
+                        "src": "https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcTyAQzebSv0NkN1aK-7xBYMKdy-2gzmSpKSAv5VjaqJ5BdXirpnNK4JfIDN"
+                    }
+                ],
+                "metatags": [
+                    {
+                        "viewport": "width=device-width, initial-scale=1, maximum-scale=1",
+                        "apple-mobile-web-app-capable": "yes",
+                        "apple-itunes-app": "app-id=925667511",
+                        "google-play-app": "app-id=com.cnn.indonesia",
+                        "kanalid": "2-3-4-32",
+                        "articleid": "304099",
+                        "articletype": "singlepage",
+                        "createdate": "2018/06/06 18:55:18",
+                        "publishdate": "2018/06/07 06:40:26",
+                        "idfokus": "0",
+                        "author": "Priska Sari Pratiwi",
+                        "dtk:acctype": "acc-cnnindonesia",
+                        "dtk:subacctype": "desktop",
+                        "dtk:createddate": "1528328426000",
+                        "dtk:articleid": "304099",
+                        "dtk:kanalid": "32",
+                        "dtk:namakanal": "nasional",
+                        "dtk:custom-title": "pelemahan kpk dan pasal kontroversial rkuhp",
+                        "dtk:custom-type": "detail",
+                        "dtk:custom-pagetype": "text",
+                        "videopresent": "No",
+                        "contenttype": "singlepagenews",
+                        "tag": "rkuhp|pemberantasan korupsi|komisi pemberantasan korupsi|kpk|analisis",
+                        "platform": "desktop",
+                        "twitter:card": "summary_large_image",
+                        "twitter:site": "@CNNindonesia",
+                        "twitter:site:id": "17128975",
+                        "twitter:creator": "@CNNindonesia",
+                        "twitter:description": "Pasal yang mengatur korupsi dalam RKUHP dinilai melemahkan KPK, dan juga menghilangkan kewenangan Pengadilan Tipikor.",
+                        "twitter:image:src": "https://awsimages.detik.net.id/visual/2018/02/12/f94799e7-d906-4dec-8800-ef13d7a288c4_169.jpeg?w=650",
+                        "fb:pages": "695605000462574",
+                        "fb:app_id": "902258536467731",
+                        "article:author": "https://www.facebook.com/CNNIndonesia",
+                        "article:publisher": "https://www.facebook.com/CNNIndonesia",
+                        "og:site_name": "nasional",
+                        "og:title": "Pelemahan KPK dan Pasal Kontroversial RKUHP",
+                        "og:url": "https://www.cnnindonesia.com/nasional/20180606185518-32-304099/pelemahan-kpk-dan-pasal-kontroversial-rkuhp",
+                        "og:description": "Pasal yang mengatur korupsi dalam RKUHP dinilai melemahkan KPK, dan juga menghilangkan kewenangan Pengadilan Tipikor.",
+                        "og:image": "https://awsimages.detik.net.id/visual/2018/02/12/f94799e7-d906-4dec-8800-ef13d7a288c4_169.jpeg?w=650",
+                        "og:image:width": "650",
+                        "og:image:height": "366",
+                        "og:type": "article",
+                        "site_name": "cnn_nasional"
+                    }
+                ],
+                "cse_image": [
+                    {
+                        "src": "https://awsimages.detik.net.id/visual/2018/02/12/f94799e7-d906-4dec-8800-ef13d7a288c4_169.jpeg?w=650"
+                    }
+                ]
+            }
+        },
+        {
+            "kind": "customsearch#result",
+            "title": "Pelemahan Kpk",
+            "htmlTitle": "<b>Pelemahan Kpk</b>",
+            "link": "https://tirto.id/q/pelemahan-kpk-jf",
+            "displayLink": "tirto.id",
+            "snippet": "Sejarah Upaya Pelemahan KPK: Dari Cicak vs Buaya Hingga Teror. HUKUM · \nWiranto akan Gelar Rapat Terbatas Bahas Pasal Tipikor RKUHP. HUKUM ...",
+            "htmlSnippet": "Sejarah Upaya <b>Pelemahan KPK</b>: Dari Cicak vs Buaya Hingga Teror. HUKUM &middot; <br>\nWiranto akan Gelar Rapat Terbatas Bahas Pasal Tipikor RKUHP. HUKUM&nbsp;...",
+            "cacheId": "-f3t9kltl24J",
+            "formattedUrl": "https://tirto.id/q/pelemahan-kpk-jf",
+            "htmlFormattedUrl": "https://tirto.id/q/<b>pelemahan</b>-<b>kpk</b>-jf",
+            "pagemap": {
+                "thumbnail": [
+                    {
+                        "src": "https://mmc.tirto.id/image/2016/05/18/logo-tirtoid-FIX.jpg"
+                    }
+                ],
+                "metatags": [
+                    {
+                        "title": "Pelemahan Kpk",
+                        "msvalidate.01": "6E2B74B4662B59307E917A7B23F79026",
+                        "googlebot-news": "index,follow",
+                        "language": "id",
+                        "geo.country": "id",
+                        "news_keywords": "Media online terkini, info nasional, internasional, ekonomi, sosial, news analisis",
+                        "geo.placename": "Indonesia",
+                        "apple-itunes-app": "app-id=1282972796",
+                        "fb:pages": "1515768312081946",
+                        "fb:app_id": "474316002755630",
+                        "og:image": "https://mmc.tirto.id/image/otf/1024x535/2016/05/18/logo-tirtoid-FIX.jpg",
+                        "og:locale": "id_ID",
+                        "og:type": "article",
+                        "og:title": "Pelemahan Kpk",
+                        "og:description": "Media online terkini, info nasional, internasional, ekonomi, sosial, dan news analisis untuk Anda",
+                        "og:url": "https://tirto.id/q/pelemahan-kpk-jf",
+                        "og:image:type": "image/jpg",
+                        "og:image:width": "600",
+                        "og:image:height": "315",
+                        "og:site_name": "tirto.id",
+                        "article:author": "https://www.facebook.com/TirtoID",
+                        "twitter:card": "summary_large_image",
+                        "twitter:site": "@tirtoid",
+                        "twitter:title": "Pelemahan Kpk",
+                        "twitter:description": "Media online terkini, info nasional, internasional, ekonomi, sosial, dan news analisis untuk Anda",
+                        "twitter:image": "https://mmc.tirto.id/image/2016/05/18/logo-tirtoid-FIX.jpg",
+                        "twitter:image:src": "https://mmc.tirto.id/image/share/tw/2016/05/18/logo-tirtoid-FIX.jpg",
+                        "thumbnail": "https://mmc.tirto.id/image/2016/05/18/logo-tirtoid-FIX.jpg",
+                        "viewport": "width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no",
+                        "theme-color": "#039ad9",
+                        "ahrefs-site-verification": "ec1b61b8a6d9a5eb3d9d0f2ce8f64e74e4e7c071551fad1f503467b3f6d2965d"
+                    }
+                ],
+                "cse_image": [
+                    {
+                        "src": "https://mmc.tirto.id/image/2016/05/18/logo-tirtoid-FIX.jpg",
+                        "type": "1",
+                        "width": "278",
+                        "height": "181"
+                    }
+                ]
+            }
+        },
+        {
+            "kind": "customsearch#result",
+            "title": "Pelemahan KPK Berjalan Mulus, Proses Persetujuan Hanya Makan ...",
+            "htmlTitle": "<b>Pelemahan KPK</b> Berjalan Mulus, Proses Persetujuan Hanya Makan ...",
+            "link": "https://bebas.kompas.id/baca/utama/2019/09/05/pelemahan-kpk-berjalan-mulus-proses-persetujuan-hanya-makan-waktu-5-menit/",
+            "displayLink": "bebas.kompas.id",
+            "snippet": "4 hari yang lalu ... Pelemahan KPK Berjalan Mulus, Proses Persetujuan Hanya Makan Waktu 5 \nMenit. Setelah revisi UU KPK disetujui menjadi RUU usul DPR ...",
+            "htmlSnippet": "4 hari yang lalu <b>...</b> <b>Pelemahan KPK</b> Berjalan Mulus, Proses Persetujuan Hanya Makan Waktu 5 <br>\nMenit. Setelah revisi UU KPK disetujui menjadi RUU usul DPR&nbsp;...",
+            "cacheId": "Tf6C1gS8jcwJ",
+            "formattedUrl": "https://bebas.kompas.id/.../pelemahan-kpk-berjalan-mulus-proses-persetujuan -hanya-makan-waktu-5-menit/",
+            "htmlFormattedUrl": "https://bebas.kompas.id/.../<b>pelemahan</b>-<b>kpk</b>-berjalan-mulus-proses-persetujuan -hanya-makan-waktu-5-menit/",
+            "pagemap": {
+                "cse_thumbnail": [
+                    {
+                        "width": "322",
+                        "height": "156",
+                        "src": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSljXp5EwGEnX0UJa2A_33WwIPB6XprWqmBYB2q1lTNxDQhG_fo2tDIa0LO"
+                    }
+                ],
+                "metatags": [
+                    {
+                        "viewport": "width=device-width, initial-scale=1",
+                        "theme-color": "#00599a",
+                        "fb:app_id": "1806379142939079",
+                        "article:published_time": "2019-09-05 14:37:37",
+                        "article:modified_time": "2019-09-05 15:48:16",
+                        "og:description": "Setelah revisi UU KPK disetujui menjadi RUU usul DPR dalam Rapat Paripurna DPR, hari ini, kabarnya Baleg DPR akan mulai membahasnya pada Sabtu (7/9/2019) dan targetnya RUU KPK sudah disahkan pada Selasa (10/9/2019).",
+                        "og:image": "https://bebas.kompas.id/wp-content/uploads/sites/315/2019/09/IMG-20190905-WA0012_1567662854-1024x498.jpg",
+                        "og:site_name": "Bebas Akses",
+                        "og:title": "Pelemahan KPK Berjalan Mulus, Proses Persetujuan Hanya Makan Waktu 5 Menit – Bebas Akses",
+                        "og:type": "article",
+                        "og:url": "https://bebas.kompas.id/baca/utama/2019/09/05/pelemahan-kpk-berjalan-mulus-proses-persetujuan-hanya-makan-waktu-5-menit/",
+                        "twitter:card": "summary_large_image",
+                        "twitter:creator": "@hariankompas",
+                        "twitter:description": "Setelah revisi UU KPK disetujui menjadi RUU usul DPR dalam Rapat Paripurna DPR, hari ini, kabarnya Baleg DPR akan mulai membahasnya pada Sabtu (7/9/2019) dan targetnya RUU KPK sudah disahkan pada Selasa (10/9/2019).",
+                        "twitter:image": "https://bebas.kompas.id/wp-content/uploads/sites/315/2019/09/IMG-20190905-WA0012_1567662854-1024x498.jpg",
+                        "twitter:site": "@hariankompas",
+                        "twitter:title": "Pelemahan KPK Berjalan Mulus, Proses Persetujuan Hanya Makan Waktu 5 Menit – Bebas Akses",
+                        "onesignal": "wordpress-plugin",
+                        "og:image:width": "1152",
+                        "og:image:height": "560",
+                        "og:locale": "en_US",
+                        "twitter:text:title": "Pelemahan KPK Berjalan Mulus, Proses Persetujuan Hanya Makan Waktu 5 Menit"
+                    }
+                ],
+                "imageobject": [
+                    {
+                        "description": "KOMPAS/DHANANG DAVID ARITONANG Wakil Ketua DPR dari Fraksi PDI-P Utut Adianto memimpin Rapat Paripurna DPR pada Kamis (5/9/2019) di Kompleks Parlemen, Jakarta. Rapat Paripurna DPR menyetujui..."
+                    },
+                    {
+                        "description": "Kompas/Heru Sri Kumoro Draf revisi UU No 30 Tahun 2002 tentang Komisi Pemberantasan Tindak Pidana Korupsi di meja anggota DPR sebelum dimulainya Rapat Paripurna DPR di Kompleks Parlemen, Jakarta,..."
+                    },
+                    {
+                        "description": "KOMPAS/HARIS FIRDAUS Sejumlah orang membubuhkan tanda tangan di atas spanduk yang dibuat Koalisi Masyarakat Sipil Antikorupsi Yogyakarta sebagai bentuk penolakan atas rencana revisi UU No 30..."
+                    },
+                    {
+                        "description": "KOMPAS/ALIF ICHWAN Puluhan alumni dari berbagai perguruan tinggi di Indonesia berunjuk rasa menolak revisi Undang-Undang Nomor 30 Tahun 2002 tentang Komisi Pemberantasan Tindak Pidana Korupsi..."
+                    },
+                    {
+                        "description": "KOMPAS/HARIS FIRDAUS Koordinator Nasional Jaringan Gusdurian Alissa Wahid (tengah) membacakan pernyataan sikap Koalisi Masyarakat Sipil Antikorupsi Yogyakarta yang menolak rencana revisi UU..."
+                    }
+                ],
+                "cse_image": [
+                    {
+                        "src": "https://bebas.kompas.id/wp-content/uploads/sites/315/2019/09/IMG-20190905-WA0012_1567662854.jpg"
+                    }
+                ]
+            }
+        },
+        {
+            "kind": "customsearch#result",
+            "title": "Koalisi Masyarakat Sipil: Jokowi Harus Tegas Lawan Pelemahan KPK",
+            "htmlTitle": "Koalisi Masyarakat Sipil: Jokowi Harus Tegas Lawan <b>Pelemahan KPK</b>",
+            "link": "https://www.idntimes.com/news/indonesia/fitang-adhitia/koalisi-masyarakat-sipil-jokowi-harus-tegas-lawan-pelemahan-kpk",
+            "displayLink": "www.idntimes.com",
+            "snippet": "1 hari yang lalu ... Jakarta, IDN Times - Koalisi Masyarakat Sipil Kawal Komisi Pemberantasan \nKorupsi (KPK) menilai pemberantasan korupsi belakangan ini ...",
+            "htmlSnippet": "1 hari yang lalu <b>...</b> Jakarta, IDN Times - Koalisi Masyarakat Sipil Kawal Komisi Pemberantasan <br>\nKorupsi (<b>KPK</b>) menilai pemberantasan korupsi belakangan ini&nbsp;...",
+            "cacheId": "7GqwW4-KzG8J",
+            "formattedUrl": "https://www.idntimes.com/.../koalisi-masyarakat-sipil-jokowi-harus-tegas- lawan-pelemahan-kpk",
+            "htmlFormattedUrl": "https://www.idntimes.com/.../koalisi-masyarakat-sipil-jokowi-harus-tegas- lawan-<b>pelemahan</b>-<b>kpk</b>",
+            "pagemap": {
+                "cse_thumbnail": [
+                    {
+                        "width": "310",
+                        "height": "163",
+                        "src": "https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcRaZNEFUinpqNyTKJ_6cCHxqEi36_nVLZZ2q5c9z7_nfRDyocVa39t7-iw"
+                    }
+                ],
+                "website": [
+                    {
+                        "name": "Koalisi Masyarakat Sipil: Jokowi Harus Tegas Lawan Pelemahan KPK",
+                        "url": "https://www.idntimes.com/news/indonesia/fitang-adhitia/koalisi-masyarakat-sipil-jokowi-harus-tegas-lawan-pelemahan-kpk",
+                        "description": "Sikap tegas Jokowi dinanti publik",
+                        "image": "https://cdn.idntimes.com/content-images/post/20190908/img-20190908-wa0012-0262857928c0bf77c1f7e28e816f7e64_wm_600x315.jpg"
+                    }
+                ],
+                "metatags": [
+                    {
+                        "viewport": "width=device-width, initial-scale=1, minimal-ui",
+                        "handheldfriendly": "True",
+                        "mobileoptimized": "320",
+                        "theme-color": "#ec2227",
+                        "author": "IDN Times",
+                        "yandex-verification": "ffc883ca21ef153a",
+                        "p:domain_verify": "cb42fd23f2744a947ae4f0b581dab883",
+                        "csrf-token": "JKFQVVahOEH9YsClAmLEIdiRlzaVeO87zjt9YNs8",
+                        "apple-itunes-app": "app-id=502838820",
+                        "twitter:card": "summary_large_image",
+                        "twitter:site": "@idntimes",
+                        "twitter:title": "Koalisi Masyarakat Sipil: Jokowi Harus Tegas Lawan Pelemahan KPK",
+                        "twitter:description": "Sikap tegas Jokowi dinanti publik",
+                        "twitter:image": "https://cdn.idntimes.com/content-images/post/20190908/img-20190908-wa0012-0262857928c0bf77c1f7e28e816f7e64_wm_600x315.jpg",
+                        "fb:app_id": "382695658587663",
+                        "og:type": "article",
+                        "og:url": "https://www.idntimes.com/news/indonesia/fitang-adhitia/koalisi-masyarakat-sipil-jokowi-harus-tegas-lawan-pelemahan-kpk",
+                        "og:title": "Koalisi Masyarakat Sipil: Jokowi Harus Tegas Lawan Pelemahan KPK",
+                        "og:image": "https://cdn.idntimes.com/content-images/post/20190908/img-20190908-wa0012-0262857928c0bf77c1f7e28e816f7e64_wm_600x315.jpg",
+                        "og:description": "Sikap tegas Jokowi dinanti publik",
+                        "og:site_name": "IDN Times",
+                        "og:image:width": "600",
+                        "og:image:height": "400",
+                        "og:image:alt": "Koalisi Masyarakat Sipil: Jokowi Harus Tegas Lawan Pelemahan KPK"
+                    }
+                ],
+                "cse_image": [
+                    {
+                        "src": "https://cdn.idntimes.com/content-images/post/20190908/img-20190908-wa0012-0262857928c0bf77c1f7e28e816f7e64_wm_600x315.jpg"
+                    }
+                ]
+            }
+        },
+        {
+            "kind": "customsearch#result",
+            "title": "Pelemahan KPK | Indonesia Corruption Watch",
+            "htmlTitle": "<b>Pelemahan KPK</b> | Indonesia Corruption Watch",
+            "link": "https://antikorupsi.org/id/tags/pelemahan-kpk",
+            "displayLink": "antikorupsi.org",
+            "snippet": "Sejak Komisi Pemberantasan Korupsi (KPK) berdiri 2003 lalu, upaya pelemahan \nterhadap lembaga ini datang silih berganti dan dengan berbagai cara.",
+            "htmlSnippet": "Sejak Komisi Pemberantasan Korupsi (<b>KPK</b>) berdiri 2003 lalu, upaya <b>pelemahan</b> <br>\nterhadap lembaga ini datang silih berganti dan dengan berbagai cara.",
+            "cacheId": "RucP_HwZQbAJ",
+            "formattedUrl": "https://antikorupsi.org/id/tags/pelemahan-kpk",
+            "htmlFormattedUrl": "https://antikorupsi.org/id/tags/<b>pelemahan</b>-<b>kpk</b>",
+            "pagemap": {
+                "cse_thumbnail": [
+                    {
+                        "width": "300",
+                        "height": "168",
+                        "src": "https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcTOx-w6IPsCaXgCtUvWcIH5cBrwGvjvyI1E_L4F_RkNw3Pskw7pO3NHYOJ_"
+                    }
+                ],
+                "metatags": [
+                    {
+                        "og:site_name": "Indonesia Corruption Watch",
+                        "og:type": "article",
+                        "og:url": "https://antikorupsi.org/id/tags/pelemahan-kpk",
+                        "og:title": "Pelemahan KPK",
+                        "twitter:card": "summary",
+                        "twitter:site": "@antikorupsi",
+                        "twitter:site:id": "49908951",
+                        "twitter:creator": "49908951",
+                        "twitter:creator:id": "49908951",
+                        "twitter:title": "Pelemahan KPK",
+                        "twitter:url": "http://icw.or.id/gyr",
+                        "viewport": "width=device-width, initial-scale=1.0"
+                    }
+                ],
+                "cse_image": [
+                    {
+                        "src": "https://antikorupsi.org/sites/default/files/IMG_0059-14-14.jpg"
+                    }
+                ]
+            }
+        },
+        {
+            "kind": "customsearch#result",
+            "title": "Menolak Pelemahan KPK - Kolom Tempo.co",
+            "htmlTitle": "Menolak <b>Pelemahan KPK</b> - Kolom Tempo.co",
+            "link": "https://kolom.tempo.co/read/1194892/menolak-pelemahan-kpk",
+            "displayLink": "kolom.tempo.co",
+            "snippet": "12 Apr 2019 ... Dalam aksi itu mereka menuntut DPR menghentikan hak angket KPK serta \nmengajak seluruh elemen masyarakat melawan pelemahan KPK.",
+            "htmlSnippet": "12 Apr 2019 <b>...</b> Dalam aksi itu mereka menuntut DPR menghentikan hak angket KPK serta <br>\nmengajak seluruh elemen masyarakat melawan <b>pelemahan KPK</b>.",
+            "cacheId": "vGvm3_YcHP8J",
+            "formattedUrl": "https://kolom.tempo.co/read/1194892/menolak-pelemahan-kpk",
+            "htmlFormattedUrl": "https://kolom.tempo.co/read/1194892/menolak-<b>pelemahan</b>-<b>kpk</b>",
+            "pagemap": {
+                "cse_thumbnail": [
+                    {
+                        "width": "297",
+                        "height": "170",
+                        "src": "https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcQZN4mVrL2BxBpmqYbztXLPfMXUuX2AqjuaqI3GdiMl7Ss01wKIDLcqqQA"
+                    }
+                ],
+                "metatags": [
+                    {
+                        "viewport": "width=device-width, initial-scale=1.0",
+                        "author": "Faisal Ramadhan",
+                        "fb:app_id": "332404380172618",
+                        "fb:pages": "160355148441",
+                        "og:locale": "id_ID",
+                        "yahoobot": "index, follow",
+                        "dable:item_id": "1194892",
+                        "og:type": "article",
+                        "og:url": "https://kolom.tempo.co/read/1194892/menolak-pelemahan-kpk",
+                        "og:title": "Menolak Pelemahan KPK",
+                        "og:image": "https://statik.tempo.co/data/2017/07/21/id_625561/625561_620.jpg",
+                        "og:image:width": "620",
+                        "og:image:height": "354",
+                        "og:site_name": "Tempo",
+                        "og:description": "Presiden Joko Widodo harus membuktikan komitmen antikorupsinya dengan turun tangan memerintahkan penghentian segala bentuk intervensi dan pelemahan sistematis terhadap Komisi Pemberantasan Korupsi.",
+                        "article:section": "Kolom",
+                        "article:section2": "Tajuk",
+                        "article:published_time": "2019-04-12T07:00:00+07:00",
+                        "twitter:card": "summary_large_image",
+                        "twitter:site": "@tempodotco",
+                        "twitter:title": "Menolak Pelemahan KPK",
+                        "twitter:description": "Presiden Joko Widodo harus membuktikan komitmen antikorupsinya dengan turun tangan memerintahkan penghentian segala bentuk intervensi dan pelemahan sistematis terhadap Komisi Pemberantasan Korupsi.",
+                        "twitter:image:src": "https://statik.tempo.co/data/2017/07/21/id_625561/625561_620.jpg",
+                        "adx:sections": "kolom"
+                    }
+                ],
+                "newsarticle": [
+                    {
+                        "headline": "Menolak Pelemahan KPK",
+                        "datepublished": "Jumat, 12 April 2019 07:00 WIB",
+                        "articlebody": "Presiden Joko Widodo harus membuktikan komitmen antikorupsinya dengan turun tangan memerintahkan penghentian segala bentuk intervensi dan pelemahan sistematis terhadap Komisi Pemberantasan...",
+                        "keywords": "KPK"
+                    }
+                ],
+                "listitem": [
+                    {
+                        "item": "Home",
+                        "name": "Home"
+                    },
+                    {
+                        "item": "Kolom",
+                        "name": "Kolom"
+                    },
+                    {
+                        "name": "Tajuk"
+                    }
+                ],
+                "imageobject": [
+                    {
+                        "image": "https://statik.tempo.co/data/2017/07/21/id_625561/625561_620.jpg",
+                        "caption": "Aktivis yang tergabung dalam Koalisi Masyarakat Sipil Jogja melakukan aksi damai menolak hak angket Komisi Pemberantasan Korupsi (KPK) di Titik Nol Km, Yogyakarta, 20 Juli 2017. Dalam aksi..."
+                    }
+                ],
+                "cse_image": [
+                    {
+                        "src": "https://statik.tempo.co/data/2017/07/21/id_625561/625561_620.jpg"
+                    }
+                ]
+            }
+        }
+    ]
+}

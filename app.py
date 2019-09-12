@@ -37,6 +37,9 @@ for keyword in keywords:
     urls = GoogleCSEHelper.get_links(search_results, RESULTS_USED_QTY)
     base_text = []
     for url in urls:
+        if ('detik.com' in url):
+            url = url + '?single=1'
+            
         raw_html = requests.get(url).content
 
         parser = NewsContentParser(raw_html, NEWS_DICT_PATH, url)

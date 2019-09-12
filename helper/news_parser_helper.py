@@ -2,6 +2,8 @@ import json
 
 from bs4 import BeautifulSoup
 
+from helper.nlp_helper import NLPHelper
+
 class NewsContentParser():
     """
     Module to parse content from news
@@ -9,6 +11,7 @@ class NewsContentParser():
     def __init__(self, html, dict_dir, url):
         self.news_dict = self.__load_news_dict(dict_dir)
         self.soup = self.__load_soup(html)
+        self.nlp_helper = NLPHelper()
         self.url = url
 
     def __load_news_dict(self, dict_dir):
@@ -27,6 +30,10 @@ class NewsContentParser():
                 return news
         return None
     
+    def __normalize_content(self, str_input):
+        return self.nlp_helper.normalization(str_input)
+
+
     def __find_content(self, tag, attr, attr_name):
         content = self.soup.find(tag, {attr: attr_name})
         return content
@@ -42,8 +49,10 @@ class NewsContentParser():
     def __parse_content(self, content):
         processed_str = ''
         for string in content.stripped_strings:
-            if ('{' not in string and '}' not in string) and (string != ''):
+            if ((('{' not in string and '}' not in string) and (string != '')) 
+                and (string is not None and 'Baca ' not in string)):
                 processed_str = ' '.join([processed_str, string])
+        processed_str = self.__normalize_content(processed_str)
         return processed_str
 
     def __parse_descendants(self, descendants):
@@ -51,8 +60,10 @@ class NewsContentParser():
         paragraph = []
         for descendant in descendants:
             paragraph_str = self.__parse_content(descendant)
-            processed_str = '\n'.join([processed_str, paragraph_str])
-            paragraph.append(paragraph_str)
+            if ((paragraph_str is not None) and ('Baca ' not in paragraph_str)):
+                processed_str = '\n'.join([processed_str, paragraph_str])
+                if (len(paragraph_str) >= 50):
+                    paragraph.append(paragraph_str)
         return processed_str, paragraph
 
     def __make_response(self, is_found, parsed_content, parsed_paragraph):
@@ -89,4 +100,7 @@ class NewsContentParser():
         else:
             parsed_content = self.__parse_content(content)
             parsed_paragraph = parsed_content.split('.')
+            for p in parsed_paragraph:
+                if (len(p) < 50):
+                    parsed_paragraph.remove(p)
             return self.__make_response(True, parsed_content, parsed_paragraph)
