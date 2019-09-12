@@ -1,0 +1,265 @@
+{
+    "title": "news content parser",
+    "items": [{
+        "name": "Kompas",
+        "base_url": "kompas.com",
+        "content_tag": "div",
+        "content_attr": "class",
+        "attr_name": "read__content",
+        "use_descendants": true,
+        "descendants_tag": "p"
+    },
+    {
+        "name": "Detik",
+        "base_url": "detik.com",
+        "content_tag": "div",
+        "content_attr": "class", 
+        "attr_name": "detail_text",
+        "use_descendants": false,
+        "descendants_tag": null
+    },
+    {
+        "name": "Tempo",
+        "base_url": "tempo.co",
+        "content_tag": "div",
+        "content_attr": "id",
+        "attr_name": "isi",
+        "use_descendants": true,
+        "descendants_tag": "p"
+    },
+    {
+        "name": "CNN Indonesia",
+        "base_url": "cnnindonesia.com",
+        "content_tag": "div",
+        "content_attr": "class",
+        "attr_name": "detail_text",
+        "use_descendants": false,
+        "descendants_tag": null
+    },
+    {
+        "name": "Tirto",
+        "base_url": "tirto.id",
+        "content_tag": "div",
+        "content_attr": "class",
+        "attr_name": "content-text-editor",
+        "use_descendants": true,
+        "descendants_tag": null
+    },
+    {
+        "name": "IDN Times",
+        "base_url": "idntimes.com",
+        "content_tag": "article",
+        "content_attr": "id",
+        "attr_name": "article-content",
+        "use_descendants": false,
+        "descendants_tag": null
+    },
+    {
+        "name": "Tribunnews",
+        "base_url": "tribunnews.com",
+        "content_tag": "div",
+        "content_attr": "class",
+        "attr_name": "txt-article",
+        "use_descendants": true,
+        "descendants_tag": "p"
+    },
+    {
+        "name": "Liputan 6",
+        "base_url": "liputan6.com",
+        "content_tag": "div",
+        "content_attr": "class",
+        "attr_name": "article-content-body__item-content",
+        "use_descendants": true,
+        "descendants_tag": "p"
+    },
+    {
+        "name": "Viva",
+        "base_url": "viva.co.id",
+        "content_tag": "div",
+        "content_attr": "id",
+        "attr_name": "article-detail-content",
+        "use_descendants": true,
+        "descendants_tag": "p"
+    },
+    {
+        "name": "Okezone",
+        "base_url": "okezone.com",
+        "content_tag": "div",
+        "content_attr": "id",
+        "attr_name": "contentx",
+        "use_descendants": true,
+        "descendants_tag": "p"
+    },
+    {
+        "name": "Sindo News",
+        "base_url": "sindonews.com",
+        "content_tag": "div",
+        "content_attr": "id",
+        "attr_name": "content",
+        "use_descendants": false,
+        "descendants_tag": null
+    },
+    {
+        "name": "Merdeka",
+        "base_url": "merdeka.com",
+        "content_tag": "div",
+        "content_attr": "class",
+        "attr_name": "mdk-body-paragraph",
+        "use_descendants": true,
+        "descendants_tag": "p"
+    },
+    {
+        "name": "Kumparan",
+        "base_url": "kumparan.com",
+        "content_tag": "div",
+        "content_attr": "class",
+        "attr_name": "StoryRenderer__EditorWrapper-azlsyx-0",
+        "use_descendants": true,
+        "descendants_tag": "span"
+    },
+    {
+        "name": "Suara",
+        "base_url": "suara.com",
+        "content_tag": "div",
+        "content_attr": "class",
+        "attr_name": "content-article",
+        "use_descendants": true,
+        "descendants_tag": "p"
+    },
+    {
+        "name": "Kompasiana",
+        "base_url": "kompasiana.com",
+        "content_tag": "div",
+        "content_attr": "class",
+        "attr_name": "read-content",
+        "use_descendants": true,
+        "descendants_tag": "p"
+    },
+    {
+        "name": "Akurat",
+        "base_url": "akurat.co",
+        "content_tag": "section",
+        "content_attr": "class",
+        "attr_name": "artikel-konten",
+        "use_descendants": true,
+        "descendants_tag": "p"
+    },
+    {
+        "name": "CNBC Indonesia",
+        "base_url": "cnbcindonesia.com",
+        "content_tag": "div",
+        "content_attr": "class",
+        "attr_name": "detail_text",
+        "use_descendants": false,
+        "descendants_tag": null
+    },
+    {
+        "name": "Republika",
+        "base_url": "republika.co.id",
+        "content_tag": "div",
+        "content_attr": "class",
+        "attr_name": "artikel",
+        "use_descendants": true,
+        "descendants_tag": "p"
+    },
+    {
+        "name": "Media Indonesia",
+        "base_url": "mediaindonesia.com",
+        "content_tag": "div",
+        "content_attr": "itemprop",
+        "attr_name": "articleBody",
+        "use_descendants": true,
+        "descendants_tag": "p"
+    },
+    {
+        "name": "Jawa Pos",
+        "base_url": "jawapos.com",
+        "content_tag": "div",
+        "content_attr": "class",
+        "attr_name": "content",
+        "use_descendants": true,
+        "descendants_tag": "p"
+    },
+    {
+        "name": "Medcom",
+        "base_url": "medcom.id",
+        "content_tag": "div",
+        "content_attr": "itemprop",
+        "attr_name": "articleBody",
+        "use_descendants": false,
+        "descendants_tag": null
+    },
+    {
+        "name": "Pikiran Rakyat",
+        "base_url": "pikiran-rakyat.com",
+        "content_tag": "div",
+        "content_attr": "id",
+        "attr_name": "content-article",
+        "use_descendants": true,
+        "descendants_tag": "p"
+    },
+    {
+        "name": "Bisnis",
+        "base_url": "bisnis.com",
+        "content_tag": "div",
+        "content_attr": "class",
+        "attr_name": "col-sm-10",
+        "use_descendants": true,
+        "descendants_tag": "p"
+    },
+    {
+        "name": "RMOL",
+        "base_url": "rmol.id",
+        "content_tag": "div",
+        "content_attr": "class",
+        "attr_name": "news_content_wrap",
+        "use_descendants": false,
+        "descendants_tag": null
+    },
+    {
+        "name": "Arah",
+        "base_url": "arah.com",
+        "content_tag": "article",
+        "content_attr": "class",
+        "attr_name": "artikel-inside",
+        "use_descendants": true,
+        "descendants_tag": "p"
+    },
+    {
+        
+        "name": "Bola",
+        "base_url": "bola.com",
+        "content_tag": "div",
+        "content_attr": "class",
+        "attr_name": "article-content-body__item-content",
+        "use_descendants": true,
+        "descendants_tag": "p"
+    },
+    {
+        "name": "Bolasport",
+        "base_url": "bolasport.com",
+        "content_tag": "div",
+        "content_attr": "class",
+        "attr_name": "read__right",
+        "use_descendants": true,
+        "descendants_tag": "p"
+    },
+    {
+        "name": "iNews",
+        "base_url": "inews.id",
+        "content_tag": "div",
+        "content_attr": "class",
+        "attr_name": "text-news",
+        "use_descendants": true,
+        "descendants_tag": "p"
+    },
+    {
+        "name": "BBC",
+        "base_url": "bbc.com",
+        "content_tag": "div",
+        "content_attr": "class",
+        "attr_name": "story-body__inner",
+        "use_descendants": true,
+        "descendants_tag": "p"
+    }]
+}
