@@ -39,11 +39,11 @@
     {
         "name": "Tirto",
         "base_url": "tirto.id",
-        "content_tag": "div",
+        "content_tag": "article",
         "content_attr": "class",
-        "attr_name": "content-text-editor",
+        "attr_name": "content-detail-holder",
         "use_descendants": true,
-        "descendants_tag": null
+        "descendants_tag": "div"
     },
     {
         "name": "IDN Times",
@@ -277,6 +277,15 @@
         "content_tag": "div",
         "content_attr": "class",
         "attr_name": "content",
+        "use_descendants": true,
+        "descendants_tag": "p"
+    },
+    {
+        "name": "Bola.net",
+        "base_url": "bola.net",
+        "content_tag": "div",
+        "content_attr": "class",
+        "attr_name": "ncont",
         "use_descendants": true,
         "descendants_tag": "p"
     }]

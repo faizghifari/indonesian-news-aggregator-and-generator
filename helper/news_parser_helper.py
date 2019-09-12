@@ -1,4 +1,5 @@
 import json
+import re
 
 from bs4 import BeautifulSoup
 
@@ -31,7 +32,10 @@ class NewsContentParser():
         return None
     
     def __normalize_content(self, str_input):
-        return self.nlp_helper.normalization(str_input)
+        res = self.nlp_helper.normalization(str_input)
+        if res is not None:
+            return res.replace('\n', ' ')
+        
 
 
     def __find_content(self, tag, attr, attr_name):
@@ -57,13 +61,10 @@ class NewsContentParser():
 
     def __parse_descendants(self, descendants):
         processed_str = ''
-        # paragraph = []
         for descendant in descendants:
             paragraph_str = self.__parse_content(descendant)
             if ((paragraph_str is not None) and ('Baca ' not in paragraph_str)):
                 processed_str = '\n'.join([processed_str, paragraph_str])
-                # if (len(paragraph_str) >= 50):
-                #     paragraph.append(paragraph_str)
         return processed_str
     
     def __parse_sentences(self, parsed_content):
@@ -97,6 +98,7 @@ class NewsContentParser():
         if (is_desc and desc_tag is None):
            content = self.__find_content_all(tag, attr, attr_name)
            parsed_content = self.__parse_descendants(content)
+           parsed_content = parsed_content.replace('\n', '')
            parsed_sentences = self.__parse_sentences(parsed_content)
            return self.__make_response(True, parsed_content, parsed_sentences)
         
@@ -109,6 +111,8 @@ class NewsContentParser():
                 parsed_content = self.__parse_descendants(descendants)
             else:
                 parsed_content = self.__parse_content(content)
-        
+
+            parsed_content = parsed_content.replace('\n', '')
+            parsed_content = re.sub('\[ .{1,3} \]', '', parsed_content)
             parsed_sentences = self.__parse_sentences(parsed_content)
             return self.__make_response(True, parsed_content, parsed_sentences)
