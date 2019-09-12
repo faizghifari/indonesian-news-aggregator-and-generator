@@ -21,7 +21,7 @@ NEWS_DICT_PATH = os.getenv('NEWS_DICT_PATH')
 KEYWORDS_PATH = os.getenv('KEYWORDS_PATH')
 RESULTS_PATH = os.getenv('RESULTS_PATH')
 
-RESULTS_USED_QTY = os.getenv('RESULTS_USED_QTY')
+RELEVANCE_THRESHOLD = os.getenv('RELEVANCE_THRESHOLD')
 
 GoogleCSEHelper = GoogleCSEHelper()
 
@@ -34,23 +34,30 @@ items = []
 
 for keyword in keywords:
     search_results = GoogleCSEHelper.google_search(keyword, API_KEY, CSE_KEY)
-    urls = GoogleCSEHelper.get_links(search_results, RESULTS_USED_QTY)
+    raw_results = GoogleCSEHelper.get_all_info(search_results, RELEVANCE_THRESHOLD)
     base_text = []
-    for url in urls:
+    for raw_result in raw_results:
+        url = raw_result['url']
         if ('detik.com' in url):
             url = url + '?single=1'
-            
+
         raw_html = requests.get(url).content
 
         parser = NewsContentParser(raw_html, NEWS_DICT_PATH, url)
 
         results = parser.parse_content()
         print(url)
-        base_text.append({
-            "url": url,
-            "text": results['parsed_content'],
-            "paragraph": results['parsed_paragraph']
-        })
+        if (results is not None):
+            base_text.append({
+                "url": url,
+                "title": raw_result['title'],
+                "sims": raw_result['sims'],
+                "relevance": raw_result['relevance'],
+                "text": results['parsed_content'],
+                "sentences": results['parsed_sentences']
+            })
+        else:
+            print('\n', "WARNING: CONTENT FAILED TO BE PARSED/URL NOT INCLUDED", '\n')
     items.append({
         "keyword": keyword,
         "base_text": base_text
