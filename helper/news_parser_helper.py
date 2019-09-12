@@ -57,20 +57,27 @@ class NewsContentParser():
 
     def __parse_descendants(self, descendants):
         processed_str = ''
-        paragraph = []
+        # paragraph = []
         for descendant in descendants:
             paragraph_str = self.__parse_content(descendant)
             if ((paragraph_str is not None) and ('Baca ' not in paragraph_str)):
                 processed_str = '\n'.join([processed_str, paragraph_str])
-                if (len(paragraph_str) >= 50):
-                    paragraph.append(paragraph_str)
-        return processed_str, paragraph
+                # if (len(paragraph_str) >= 50):
+                #     paragraph.append(paragraph_str)
+        return processed_str
+    
+    def __parse_sentences(self, parsed_content):
+        parsed_sentences = parsed_content.split(' .')
+        for p in parsed_sentences:
+            if (len(p) < 50):
+                parsed_sentences.remove(p)
+        return parsed_sentences
 
-    def __make_response(self, is_found, parsed_content, parsed_paragraph):
+    def __make_response(self, is_found, parsed_content, parsed_sentences):
         return {
             'is_found': is_found,
             'parsed_content': parsed_content,
-            'parsed_paragraph': parsed_paragraph
+            'parsed_sentences': parsed_sentences
         }
 
     def __not_found_response(self):
@@ -89,18 +96,19 @@ class NewsContentParser():
 
         if (is_desc and desc_tag is None):
            content = self.__find_content_all(tag, attr, attr_name)
-           parsed_content, parsed_paragraph = self.__parse_descendants(content)
-           return self.__make_response(True, parsed_content, parsed_paragraph)
+           parsed_content = self.__parse_descendants(content)
+           parsed_sentences = self.__parse_sentences(parsed_content)
+           return self.__make_response(True, parsed_content, parsed_sentences)
         
         content = self.__find_content(tag, attr, attr_name)
-        if is_desc:
-            descendants = self.__find_descendants(content, desc_tag)
-            parsed_content, parsed_paragraph = self.__parse_descendants(descendants)
-            return self.__make_response(True, parsed_content, parsed_paragraph)
-        else:
-            parsed_content = self.__parse_content(content)
-            parsed_paragraph = parsed_content.split('.')
-            for p in parsed_paragraph:
-                if (len(p) < 50):
-                    parsed_paragraph.remove(p)
-            return self.__make_response(True, parsed_content, parsed_paragraph)
+        if content is not None:
+            parsed_content = ''
+
+            if is_desc:
+                descendants = self.__find_descendants(content, desc_tag)
+                parsed_content = self.__parse_descendants(descendants)
+            else:
+                parsed_content = self.__parse_content(content)
+        
+            parsed_sentences = self.__parse_sentences(parsed_content)
+            return self.__make_response(True, parsed_content, parsed_sentences)

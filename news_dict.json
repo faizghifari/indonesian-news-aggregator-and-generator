@@ -120,7 +120,7 @@
     {
         "name": "Suara",
         "base_url": "suara.com",
-        "content_tag": "div",
+        "content_tag": "article",
         "content_attr": "class",
         "attr_name": "content-article",
         "use_descendants": true,
@@ -259,6 +259,24 @@
         "content_tag": "div",
         "content_attr": "class",
         "attr_name": "story-body__inner",
+        "use_descendants": true,
+        "descendants_tag": "p"
+    },
+    {
+        "name": "Wikipedia",
+        "base_url": "wikipedia.org",
+        "content_tag": "div",
+        "content_attr": "class",
+        "attr_name": "mw-parser-output",
+        "use_descendants": true,
+        "descendants_tag": "p"
+    },
+    {
+        "name": "Kompas ID",
+        "base_url": "kompas.id",
+        "content_tag": "div",
+        "content_attr": "class",
+        "attr_name": "content",
         "use_descendants": true,
         "descendants_tag": "p"
     }]
