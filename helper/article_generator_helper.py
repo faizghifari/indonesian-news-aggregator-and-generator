@@ -18,12 +18,12 @@ class ArticleGeneratorHelper():
             generated_text = ''
             combined_sentences = []
             start_idx = i
-            for text in texts:
-                sentences = text['sentences']
+            for j in range(len(texts)):
+                sentences = texts[start_idx]['sentences']
                 count_sentences = int(len(sentences) / len(texts))
                 if count_sentences == 0:
                     count_sentences = 1
-                count_idx = int(count_sentences * start_idx)
+                count_idx = int(count_sentences * j)
                 if count_idx >= len(sentences):
                     count_idx = len(sentences) - 1
                 print('START IDX : ', start_idx, ' ; COUNT SENTENCES : ', count_sentences, ' ; COUNT IDX : ', count_idx)

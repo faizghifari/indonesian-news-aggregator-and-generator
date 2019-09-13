@@ -293,8 +293,8 @@
         "name": "MSN",
         "base_url": "msn.com",
         "content_tag": "section",
-        "content_attr": "class",
-        "attr_name": "articlebody",
+        "content_attr": "itemprop",
+        "attr_name": "articleBody",
         "use_descendants": true,
         "descendants_tag": "p"
     }]
