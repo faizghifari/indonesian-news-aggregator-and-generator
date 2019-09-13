@@ -12,65 +12,39 @@ from helper.news_parser_helper import NewsContentParser
 from helper.google_cse_helper import GoogleCSEHelper
 from helper.article_generator_helper import ArticleGeneratorHelper
 
-API_KEY = os.getenv('API_KEY')
-CSE_KEY = os.getenv('CSE_KEY')
-
-SEARCH_SERVICE_NAME = os.getenv('SEARCH_SERVICE_NAME')
-SEARCH_SERVICE_VERSION = os.getenv('SEARCH_SERVICE_VERSION')
-
-NEWS_DICT_PATH = os.getenv('NEWS_DICT_PATH')
-KEYWORDS_PATH = os.getenv('KEYWORDS_PATH')
-RESULTS_PATH = os.getenv('RESULTS_PATH')
-
-RELEVANCE_THRESHOLD = os.getenv('RELEVANCE_THRESHOLD')
+from util.support import SupportUtil
+from util.dump import DumpUtil
 
 GoogleCSEHelper = GoogleCSEHelper()
 ArticleGeneratorHelper = ArticleGeneratorHelper()
+SupportUtil = SupportUtil()
+DumpUtil = DumpUtil()
 
-keywords = set()
-with open(KEYWORDS_PATH, 'r') as f:
-    for line in f:
-        keywords.add(line.strip().lower())
+PARSE_FAILED_MSG = os.getenv('PARSE_FAILED_MSG')
 
-items = []
+if __name__ == "__main__":
+    keywords = SupportUtil.get_keywords()
+    items = []
+    for keyword in keywords:
+        raw_results = GoogleCSEHelper.search_and_get_results(keyword)
+        base_text = []
+        for raw_result in raw_results:
+            url = SupportUtil.resolve_url(raw_result['url'])
+            raw_html = requests.get(url).content
+            parser = NewsContentParser(raw_html, url)
 
-for keyword in keywords:
-    search_results = GoogleCSEHelper.google_search(keyword, API_KEY, CSE_KEY)
-    raw_results = GoogleCSEHelper.get_all_info(search_results, RELEVANCE_THRESHOLD)
-    base_text = []
-    for raw_result in raw_results:
-        url = raw_result['url']
-        if ('detik.com' in url):
-            url = url + '?single=1'
+            results = parser.parse_content()
+            print(url)
+            if (results is not None):
+                base_text.append(SupportUtil.build_base_text(raw_result, results))
+            else:
+                print('\n', PARSE_FAILED_MSG, '\n')
+        item = SupportUtil.build_item(keyword, base_text)
+        item = ArticleGeneratorHelper.generate_from_item(item)
 
-        raw_html = requests.get(url).content
+        DumpUtil.dump_item_to_txt(item)
+        DumpUtil.dump_item_to_json(item)
+        
+        items.append(item)
 
-        parser = NewsContentParser(raw_html, NEWS_DICT_PATH, url)
-
-        results = parser.parse_content()
-        print(url)
-        if (results is not None):
-            base_text.append({
-                "url": url,
-                "title": raw_result['title'],
-                "sims": raw_result['sims'],
-                "relevance": raw_result['relevance'],
-                "text": results['parsed_content'],
-                "sentences": results['parsed_sentences']
-            })
-        else:
-            print('\n', "WARNING: CONTENT FAILED TO BE PARSED/URL NOT INCLUDED", '\n')
-    items.append({
-        "keyword": keyword,
-        "base_text": base_text
-    })
-
-items = ArticleGeneratorHelper.generate_from_items(items)
-
-file_obj = open(RESULTS_PATH, 'w')
-dict_obj = {}
-
-dict_obj['items'] = items
-
-json.dump(dict_obj, file_obj)
-
+    DumpUtil.dump_items_to_json(items)

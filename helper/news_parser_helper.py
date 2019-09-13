@@ -1,5 +1,6 @@
 import json
 import re
+import os
 
 from bs4 import BeautifulSoup
 
@@ -9,8 +10,8 @@ class NewsContentParser():
     """
     Module to parse content from news
     """
-    def __init__(self, html, dict_dir, url):
-        self.news_dict = self.__load_news_dict(dict_dir)
+    def __init__(self, html, url):
+        self.news_dict = self.__load_news_dict(os.getenv('NEWS_DICT_PATH'))
         self.soup = self.__load_soup(html)
         self.nlp_helper = NLPHelper()
         self.url = url

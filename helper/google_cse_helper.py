@@ -9,10 +9,16 @@ class GoogleCSEHelper():
     """
     def __init__(self):
         self.nlp_helper = NLPHelper()
+        self.service = build(
+            os.getenv('SEARCH_SERVICE_NAME'),
+            os.getenv('SEARCH_SERVICE_VERSION'),
+            developerKey=os.getenv('API_KEY')
+        )
+        self.cse_key = os.getenv('CSE_KEY')
+        self.threshold = os.getenv('RELEVANCE_THRESHOLD')
 
-    def google_search(self, search_term, api_key, cse_id, **kwargs):
-        service = build("customsearch", "v1", developerKey=api_key)
-        res = service.cse().list(q=search_term, cx=cse_id, **kwargs).execute()
+    def __search(self, search_term, **kwargs):
+        res = self.service.cse().list(q=search_term, cx=self.cse_key, **kwargs).execute()
         return res
     
     def __get_links(self, items):
@@ -31,7 +37,7 @@ class GoogleCSEHelper():
         sims = self.nlp_helper.sentence_similarity(titles, base)
         return sims
     
-    def get_all_info(self, results, relevance_threshold):
+    def __get_all_info(self, results, relevance_threshold):
         items = results['items']
         links = self.__get_links(items)
         titles = self.__get_titles(items)
@@ -48,3 +54,7 @@ class GoogleCSEHelper():
             }
             all_info.append(info)
         return all_info
+    
+    def search_and_get_results(self, keyword):
+        search_res = self.__search(keyword)
+        return self.__get_all_info(search_res, self.threshold)

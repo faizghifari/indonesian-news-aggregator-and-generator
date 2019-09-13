@@ -14,7 +14,6 @@ class ArticleGeneratorHelper():
     def __generate_articles(self, texts):
         generated_articles = []
         for i in range(len(texts)):
-            print('ITERATION NUM : ', i, '\n')
             generated_text = ''
             combined_sentences = []
             start_idx = i
@@ -26,7 +25,6 @@ class ArticleGeneratorHelper():
                 count_idx = int(count_sentences * j)
                 if count_idx >= len(sentences):
                     count_idx = len(sentences) - 1
-                print('START IDX : ', start_idx, ' ; COUNT SENTENCES : ', count_sentences, ' ; COUNT IDX : ', count_idx)
                 for _ in range(count_sentences):
                     if generated_text != '':
                         generated_text = ''.join([generated_text, ' . ', sentences[count_idx]])
@@ -44,18 +42,21 @@ class ArticleGeneratorHelper():
             })
         
         return generated_articles
-
     
+    def generate_from_item(self, raw_item):
+        item = raw_item
+        base_text = item['base_text']
+
+        relevance_texts, irrelevance_texts = self.__parse_based_on_relevancy(base_text)
+
+        generated_r_texts = self.__generate_articles(relevance_texts)
+        generated_ir_texts = self.__generate_articles(irrelevance_texts)
+        item['generated_r_text'] = generated_r_texts
+        item['generated_ir_text'] = generated_ir_texts
+        return item
+
     def generate_from_items(self, raw_items):
         items = raw_items
         for item in items:
-            print('KEYWORD : ', item['keyword'], '\n')
-            base_text = item['base_text']
-
-            relevance_texts, irrelevance_texts = self.__parse_based_on_relevancy(base_text)
-
-            generated_r_texts = self.__generate_articles(relevance_texts)
-            generated_ir_texts = self.__generate_articles(irrelevance_texts)
-            item['generated_r_text'] = generated_r_texts
-            item['generated_ir_text'] = generated_ir_texts
+            item = self.generate_from_item(item)
         return items
