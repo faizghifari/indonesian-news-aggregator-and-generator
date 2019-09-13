@@ -10,6 +10,7 @@ load_dotenv(dotenv_path=env_path)
 
 from helper.news_parser_helper import NewsContentParser
 from helper.google_cse_helper import GoogleCSEHelper
+from helper.article_generator_helper import ArticleGeneratorHelper
 
 API_KEY = os.getenv('API_KEY')
 CSE_KEY = os.getenv('CSE_KEY')
@@ -24,6 +25,7 @@ RESULTS_PATH = os.getenv('RESULTS_PATH')
 RELEVANCE_THRESHOLD = os.getenv('RELEVANCE_THRESHOLD')
 
 GoogleCSEHelper = GoogleCSEHelper()
+ArticleGeneratorHelper = ArticleGeneratorHelper()
 
 keywords = set()
 with open(KEYWORDS_PATH, 'r') as f:
@@ -62,6 +64,8 @@ for keyword in keywords:
         "keyword": keyword,
         "base_text": base_text
     })
+
+items = ArticleGeneratorHelper.generate_from_items(items)
 
 file_obj = open(RESULTS_PATH, 'w')
 dict_obj = {}

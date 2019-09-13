@@ -288,5 +288,14 @@
         "attr_name": "ncont",
         "use_descendants": true,
         "descendants_tag": "p"
+    },
+    {
+        "name": "MSN",
+        "base_url": "msn.com",
+        "content_tag": "section",
+        "content_attr": "class",
+        "attr_name": "articlebody",
+        "use_descendants": true,
+        "descendants_tag": "p"
     }]
 }
