@@ -47,8 +47,10 @@ class GoogleCSEHelper():
         all_info = []
         for i in range(len(items)):
             info = {
+                "id": i,
                 "url": links[i],
                 "title": titles[i],
+                "base": i == 0,
                 "sims": sims[i],
                 "relevance": float(sims[i]) > float(relevance_threshold)
             }

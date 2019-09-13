@@ -23,8 +23,10 @@ class SupportUtil():
     
     def build_base_text(self, raw_result, results):
         return {
+            "id": raw_result['id'],
             "url": self.resolve_url(raw_result['url']),
             "title": raw_result['title'],
+            "base": raw_result['base'],
             "sims": raw_result['sims'],
             "relevance": raw_result['relevance'],
             "text": results['parsed_content'],
