@@ -21,5 +21,5 @@ if __name__ == "__main__":
     items = raw['items']
     items = ArticleGeneratorHelper.generate_from_items(items)
 
-    # DumpUtil.dump_items_to_txt(items)
+    DumpUtil.dump_items_to_txt(items)
     DumpUtil.dump_items_to_json(items)

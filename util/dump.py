@@ -45,7 +45,7 @@ class DumpUtil():
         keyword = item['keyword']
         self.__dump_based_on_type(keyword, item, 'base_text')
         self.__dump_based_on_type(keyword, item, 'generated_r_text')
-        self.__dump_based_on_type(keyword, item, 'generated_ir_text')
+        # self.__dump_based_on_type(keyword, item, 'generated_ir_text')
     
     def dump_item_to_json(self, item):
         keyword = item['keyword']
