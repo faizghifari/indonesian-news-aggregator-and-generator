@@ -55,21 +55,6 @@ class ArticleGeneratorHelper():
             "pos_in_src": src_pos,
             "sum_len_text": sum_len_text
         }
-    
-    def __get_ori_details(self, g_text, combined_sentences, text):
-        text_details = self.__get_text_details(combined_sentences, text)
-        ori_text = text_details['text']
-        sum_len_text = text_details['sum_len_text']
-        return {
-            "ori_src_id": text['id'],
-            "ori_src_url": text['url'],
-            "ori_text": ori_text,
-            "ori_sentences": text_details['sentences'],
-            "ori_pos_in_text": text_details['pos_in_text'],
-            "ori_pos_in_src": text_details['pos_in_src'],
-            "ori_per_text": float(float(sum_len_text / len(g_text)) * 100.0),
-            "ori_per_src": float(float(sum_len_text / len(text['text'])) * 100.0)
-        }
 
     def __get_plagiarism_details(self, g_text, combined_sentences, text):
         text_details = self.__get_text_details(combined_sentences, text)
@@ -88,13 +73,8 @@ class ArticleGeneratorHelper():
     
     def __get_generated_info(self, g_text, combined_sentences, texts):
         plagiarism_items = []
-        # ori_data = {}
         for text in texts:
             plagiarism_items.append(self.__get_plagiarism_details(g_text,combined_sentences, text))
-            # if text['base']:
-            #     ori_data = self.__get_ori_details(g_text, combined_sentences, text)
-            # else:
-            #     plagiarism_items.append(self.__get_plagiarism_details(g_text,combined_sentences, text))
         plagiarism_per_text = float(0.0)
         for item in plagiarism_items:
             plagiarism_per_text +=  item['per_in_text']
@@ -145,9 +125,7 @@ class ArticleGeneratorHelper():
         relevance_texts, irrelevance_texts = self.__parse_based_on_relevancy(base_text)
 
         generated_r_texts = self.__generate_articles(relevance_texts)
-        # generated_ir_texts = self.__generate_articles(irrelevance_texts)
         item['generated_r_text'] = generated_r_texts
-        # item['generated_ir_text'] = generated_ir_texts
         return item
 
     def generate_from_items(self, raw_items):
