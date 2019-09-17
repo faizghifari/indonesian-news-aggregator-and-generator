@@ -24,52 +24,23 @@ class ArticleGeneratorHelper():
         return max_len, min_len
 
     def __get_text_details(self, combined_sentences, text):
-        # temp_str = ''
-        # start_idx_doc, stop_idx_doc = -1, -1
-        # start_idx_src, stop_idx_src = -1, -1
-        # src_text, src_sentences, doc_pos, src_pos = [], [], [], []
         pos_text_src, src_sentences = [], []
         sentences = text['sentences']
         for i in range(len(sentences)):
             try:
                 idx = combined_sentences.index(sentences[i])
-                # temp_str = ''.join([temp_str, sentences[i]])
                 src_sentences.append(sentences[i])
                 pos_text_src.append(tuple((idx,i)))
-                # if (start_idx_doc == -1):
-                #     start_idx_doc = idx
-                #     start_idx_src = i
-                # stop_idx_doc = idx
-                # stop_idx_src = i
 
             except ValueError:
                 pass
-            #     if (start_idx_doc == -1):
-            #         pass
-            #     else:
-            #         src_text.append(temp_str)
-            #         doc_pos.append(tuple((start_idx_doc, stop_idx_doc)))
-            #         src_pos.append(tuple((start_idx_src, stop_idx_src)))
-            #         temp_str = ''
-            #         start_idx_doc, stop_idx_doc = -1, -1
-            #         start_idx_src, stop_idx_src = -1, -1
-            
-            # if (i == len(sentences) - 1) and (start_idx_doc != -1):
-            #     src_text.append(temp_str)
-            #     doc_pos.append(tuple((start_idx_doc, stop_idx_doc)))
-            #     src_pos.append(tuple((start_idx_src, stop_idx_src)))
         
         src_text = ' . '.join(src_sentences)
-        # sum_len_text = 0
-        # for txt in src_text:
-        #     sum_len_text += len(txt)
 
         return {
             "text": src_text,
             "sentences": src_sentences,
             "pos_text_src": pos_text_src,
-            # "pos_in_text": doc_pos,
-            # "pos_in_src": src_pos,
             "sum_len_text": len(src_text)
         }
 
@@ -83,8 +54,6 @@ class ArticleGeneratorHelper():
             "concatenated_text": copied_text,
             "sentences": text_details['sentences'],
             "pos_text_src": text_details['pos_text_src'],
-            # "pos_in_text": text_details['pos_in_text'],
-            # "pos_in_src": text_details['pos_in_src'],
             "per_in_text": float(float(sum_len_text / len(g_text)) * 100.0),
             "per_in_src": float(float(sum_len_text / len(text['text'])) * 100.0)
         }
