@@ -10,6 +10,99 @@ class ArticleGeneratorHelper():
             else:
                 irrelevance_texts.append(text)
         return relevance_texts, irrelevance_texts
+
+    def __get_text_details(self, combined_sentences, text):
+        temp_str = ''
+        start_idx_doc, stop_idx_doc = -1, -1
+        start_idx_src, stop_idx_src = -1, -1
+        src_text, src_sentences, doc_pos, src_pos = [], [], [], []
+        sentences = text['sentences']
+        for i in range(len(sentences)):
+            try:
+                idx = combined_sentences.index(sentences[i])
+                temp_str = ''.join([temp_str, sentences[i]])
+                src_sentences.append(sentences[i])
+                if (start_idx_doc == -1):
+                    start_idx_doc = idx
+                    start_idx_src = i
+                stop_idx_doc = idx
+                stop_idx_src = i
+
+            except ValueError:
+                if (start_idx_doc == -1):
+                    pass
+                else:
+                    src_text.append(temp_str)
+                    doc_pos.append(tuple((start_idx_doc, stop_idx_doc)))
+                    src_pos.append(tuple((start_idx_src, stop_idx_src)))
+                    temp_str = ''
+                    start_idx_doc, stop_idx_doc = -1, -1
+                    start_idx_src, stop_idx_src = -1, -1
+            
+            if (i == len(sentences) - 1) and (start_idx_doc != -1):
+                src_text.append(temp_str)
+                doc_pos.append(tuple((start_idx_doc, stop_idx_doc)))
+                src_pos.append(tuple((start_idx_src, stop_idx_src)))
+
+        sum_len_text = 0
+        for txt in src_text:
+            sum_len_text += len(txt)
+
+        return {
+            "text": src_text,
+            "sentences": src_sentences,
+            "pos_in_text": doc_pos,
+            "pos_in_src": src_pos,
+            "sum_len_text": sum_len_text
+        }
+    
+    def __get_ori_details(self, g_text, combined_sentences, text):
+        text_details = self.__get_text_details(combined_sentences, text)
+        ori_text = text_details['text']
+        sum_len_text = text_details['sum_len_text']
+        return {
+            "ori_src_id": text['id'],
+            "ori_src_url": text['url'],
+            "ori_text": ori_text,
+            "ori_sentences": text_details['sentences'],
+            "ori_pos_in_text": text_details['pos_in_text'],
+            "ori_pos_in_src": text_details['pos_in_src'],
+            "ori_per_text": float(float(sum_len_text / len(g_text)) * 100.0),
+            "ori_per_src": float(float(sum_len_text / len(text['text'])) * 100.0)
+        }
+
+    def __get_plagiarism_details(self, g_text, combined_sentences, text):
+        text_details = self.__get_text_details(combined_sentences, text)
+        copied_text = text_details['text']
+        sum_len_text = text_details['sum_len_text']
+        return {
+            "src_id": text['id'],
+            "src_url": text['url'],
+            "concated_text": copied_text,
+            "sentences": text_details['sentences'],
+            "pos_in_text": text_details['pos_in_text'],
+            "pos_in_src": text_details['pos_in_src'],
+            "per_in_text": float(float(sum_len_text / len(g_text)) * 100.0),
+            "per_in_src": float(float(sum_len_text / len(text['text'])) * 100.0)
+        }
+    
+    def __get_generated_info(self, g_text, combined_sentences, texts):
+        plagiarism_items = []
+        # ori_data = {}
+        for text in texts:
+            plagiarism_items.append(self.__get_plagiarism_details(g_text,combined_sentences, text))
+            # if text['base']:
+            #     ori_data = self.__get_ori_details(g_text, combined_sentences, text)
+            # else:
+            #     plagiarism_items.append(self.__get_plagiarism_details(g_text,combined_sentences, text))
+        plagiarism_per_text = float(0.0)
+        for item in plagiarism_items:
+            plagiarism_per_text +=  item['per_in_text']
+        plagiarism_data = {
+            "plagiarism_items": plagiarism_items,
+            "plagiarism_total_in_text": plagiarism_per_text
+        }
+        return plagiarism_data
     
     def __generate_articles(self, texts):
         generated_articles = []
@@ -36,9 +129,11 @@ class ArticleGeneratorHelper():
                     start_idx = 0
                 else:
                     start_idx += 1
+            plagiarism_data = self.__get_generated_info(generated_text, combined_sentences, texts)
             generated_articles.append({
                 "text": generated_text,
-                "sentences": combined_sentences
+                "sentences": combined_sentences,
+                "plagiarism_data": plagiarism_data
             })
         
         return generated_articles
@@ -50,9 +145,9 @@ class ArticleGeneratorHelper():
         relevance_texts, irrelevance_texts = self.__parse_based_on_relevancy(base_text)
 
         generated_r_texts = self.__generate_articles(relevance_texts)
-        generated_ir_texts = self.__generate_articles(irrelevance_texts)
+        # generated_ir_texts = self.__generate_articles(irrelevance_texts)
         item['generated_r_text'] = generated_r_texts
-        item['generated_ir_text'] = generated_ir_texts
+        # item['generated_ir_text'] = generated_ir_texts
         return item
 
     def generate_from_items(self, raw_items):
