@@ -189,6 +189,12 @@ class ArticleGeneratorHelper():
 
     def generate_from_items(self, raw_items, counter):
         items = raw_items
+        data = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
         for item in items:
             item, counter = self.generate_from_item(item, counter)
+            for article in item['generated_r_text']:
+                for plagiat_data in article['plagiarism_data']['plagiarism_items']:
+                    data[int(round(plagiat_data['per_in_src'],-1) / 10)] += 1
+        print('DATA     : ', data)
+        print('SUM      : ', sum(data))
         return items
