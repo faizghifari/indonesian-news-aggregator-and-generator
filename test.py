@@ -19,7 +19,8 @@ if __name__ == "__main__":
         raw = json.load(json_file)
 
     items = raw['items']
-    items = ArticleGeneratorHelper.generate_from_items(items)
+    per_counter = 0
+    items = ArticleGeneratorHelper.generate_from_items(items, per_counter)
 
-    DumpUtil.dump_items_to_txt(items)
+    # DumpUtil.dump_items_to_txt(items)
     DumpUtil.dump_items_to_json(items)
