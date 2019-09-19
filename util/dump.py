@@ -62,6 +62,12 @@ class DumpUtil():
         dict_obj['items'] = items
         self.__dump_json(self.results_json_path, dict_obj)
     
+    def dump_pair_to_json(self, pair):
+        keyword = pair['keyword']
+        dir_path = self.__resolve_dir_path(keyword)
+        filename = keyword.replace(' ', '-') + '-pairs' + '.json'
+        self.__dump_json(dir_path + filename, pair)
+
     def dump_pairs_to_json(self, pairs):
         dict_obj = { 'pairs': pairs }
         self.__dump_json('test_pairs.json', dict_obj)
