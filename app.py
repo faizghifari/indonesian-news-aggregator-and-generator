@@ -39,8 +39,9 @@ if __name__ == "__main__":
                 base_text.append(SupportUtil.build_base_text(raw_result, results))
             else:
                 print('\n', PARSE_FAILED_MSG, '\n')
+        per_counter = 0
         item = SupportUtil.build_item(keyword, base_text)
-        item = ArticleGeneratorHelper.generate_from_item(item)
+        item = ArticleGeneratorHelper.generate_from_item(item, per_counter)
 
         DumpUtil.dump_item_to_txt(item)
         DumpUtil.dump_item_to_json(item)
