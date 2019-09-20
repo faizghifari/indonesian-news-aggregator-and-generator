@@ -4,10 +4,10 @@ import os
 
 class ArticleGeneratorHelper():
     def __init__(self):
-        self.num_articles = os.getenv('NUM_ARTICLES')
-        self.num_texts = os.getenv('NUM_TEXTS')
-        self.max_n_articles = os.getenv('MAX_N_ARTICLES')
-        self.min_n_texts = os.getenv('MIN_N_TEXTS')
+        self.num_articles = int(os.getenv('NUM_ARTICLES'))
+        self.num_texts = int(os.getenv('NUM_TEXTS'))
+        self.max_n_articles = int(os.getenv('MAX_N_ARTICLES'))
+        self.min_n_texts = int(os.getenv('MIN_N_TEXTS'))
         self.list_text_per = [float(i) for i in os.getenv('LIST_TEXT_PER').split(',')]
 
     def __parse_based_on_relevancy(self, base_text):
@@ -37,7 +37,11 @@ class ArticleGeneratorHelper():
     
     def __get_n_texts(self, lent, opt='random'):
         if (opt == 'random'):
-            return random.randint(self.min_n_texts, lent)
+            try:
+                return random.randint(self.min_n_texts, lent)
+            except ValueError:
+                return min(lent, self.num_texts)
+            
         else:
             return min(lent, self.num_texts)
     
@@ -128,7 +132,7 @@ class ArticleGeneratorHelper():
             chosen_sentences = random.sample(sentences, n_sentences)
             for sentence in chosen_sentences:
                 combined_sentences.append(sentence)
-
+        
         generated_text = ' . '.join(combined_sentences)
         plagiarism_data = self.__get_generated_info(generated_text, combined_sentences, texts)
         return {

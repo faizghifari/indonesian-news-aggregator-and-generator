@@ -35,7 +35,10 @@ class NewsContentParser():
     def __normalize_content(self, str_input):
         res = self.nlp_helper.normalization(str_input)
         if res is not None:
-            return res.replace('\n', ' ')
+            res = re.sub('\[ .{1,3} \]', '', res)
+            res = re.sub('\"(.+?)\"', '', res)
+            res = res.replace('\n', ' ')
+            return res
 
     def __find_content(self, tag, attr, attr_name):
         content = self.soup.find(tag, {attr: attr_name})
@@ -69,10 +72,11 @@ class NewsContentParser():
     def __parse_sentences(self, parsed_content):
         parsed_sentences = parsed_content.split(' .')
         for p in parsed_sentences:
-            if (len(p) < 50):
+            if (len(p) < 50) or (p is None):
                 parsed_sentences.remove(p)
         
         parsed_sentences[:] = [self.__normalize_content(p) for p in parsed_sentences]
+        parsed_sentences = [p for p in parsed_sentences if p is not None]
         return parsed_sentences
 
     def __make_response(self, is_found, parsed_content, parsed_sentences):
@@ -114,6 +118,5 @@ class NewsContentParser():
                 parsed_content = self.__parse_content(content)
 
             parsed_content = self.__normalize_content(parsed_content)
-            parsed_content = re.sub('\[ .{1,3} \]', '', parsed_content)
             parsed_sentences = self.__parse_sentences(parsed_content)
             return self.__make_response(True, parsed_content, parsed_sentences)

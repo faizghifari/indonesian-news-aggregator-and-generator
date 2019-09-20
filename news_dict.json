@@ -297,5 +297,14 @@
         "attr_name": "articleBody",
         "use_descendants": true,
         "descendants_tag": "p"
+    },
+    {
+        "name": "VOA Indonesia",
+        "base_url": "voaindonesia.com",
+        "content_tag": "div",
+        "content_attr": "class",
+        "attr_name": "wsw",
+        "use_descendants": true,
+        "descendants_tag": "p"
     }]
 }
