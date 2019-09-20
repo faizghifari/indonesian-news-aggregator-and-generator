@@ -6,6 +6,8 @@ class ArticleGeneratorHelper():
     def __init__(self):
         self.num_articles = os.getenv('NUM_ARTICLES')
         self.num_texts = os.getenv('NUM_TEXTS')
+        self.max_n_articles = os.getenv('MAX_N_ARTICLES')
+        self.min_n_texts = os.getenv('MIN_N_TEXTS')
         self.list_text_per = [float(i) for i in os.getenv('LIST_TEXT_PER').split(',')]
 
     def __parse_based_on_relevancy(self, base_text):
@@ -29,15 +31,31 @@ class ArticleGeneratorHelper():
     
     def __get_n_articles(self, lent, opt='random'):
         if (opt == 'random'):
-            return random.randint(lent, 20)
+            return random.randint(lent, self.max_n_articles)
         else:
             return self.num_articles
     
     def __get_n_texts(self, lent, opt='random'):
         if (opt == 'random'):
-            return random.randint(2, lent)
+            return random.randint(self.min_n_texts, lent)
         else:
             return min(lent, self.num_texts)
+    
+    def __get_n_sentences(self, sentences, texts, counter, len_article, n_texts_remain, opt):
+        if (counter == len(self.list_text_per)):
+            counter = 0
+        n_sentences = math.ceil(float(self.list_text_per[counter] * len(sentences)))
+        if (opt == 'random'):
+            n_sentences = random.randint(1, len_article - n_texts_remain)
+        else:
+            counter += 1
+
+        first = False
+        if (n_texts_remain == len(texts) - 1):
+            n_sentences -= 1
+            first = True
+        
+        return min(n_sentences, len(sentences) - 1), first
     
     def __get_len_article(self, texts, opt='random'):
         if (opt == 'random'):
@@ -92,33 +110,21 @@ class ArticleGeneratorHelper():
             "plagiarism_total_in_text": plagiarism_per_text
         }
         return plagiarism_data
-    
+
     def __generate_article(self, texts, len_article, counter, opt='random'):
         n_texts_remain = len(texts)
         combined_sentences = []
         for text in texts:
             sentences = text['sentences'].copy()
             n_texts_remain -= 1
-            if (counter == len(self.list_text_per)):
-                counter = 0
-            n_sentences = math.ceil(float(self.list_text_per[counter] * len(sentences)))
-            if (opt == 'random'):
-                n_sentences = random.randint(1, len_article - n_texts_remain)
-            else:
-                counter += 1
-
-            if (n_texts_remain == len(texts) - 1):
-                n_sentences -= 1
+            n_sentences, first = self.__get_n_sentences(sentences, texts, counter, len_article, n_texts_remain, opt)
+            if first:
                 combined_sentences.append(sentences[0])
             sentences.pop(0)
-
-            n_sentences = min(n_sentences, len(sentences) - 1)
-
             if (opt == 'random'):
                 if (n_texts_remain == 0):
                     n_sentences = len_article
                 len_article -= n_sentences
-            
             chosen_sentences = random.sample(sentences, n_sentences)
             for sentence in chosen_sentences:
                 combined_sentences.append(sentence)

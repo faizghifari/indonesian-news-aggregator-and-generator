@@ -11,6 +11,19 @@ class SupportUtil():
             for line in f:
                 keywords.add(line.strip().lower())
         return keywords
+
+    def __check_plagiarism(self, g_text, src_text):
+        plgt_sentences = []
+        plgt_idx = []
+        is_plagiat = False
+        for sentences in src_text['sentences']:
+            if (sentences in g_text['text']) or (sentences in g_text['sentences']):
+                plgt_sentences.append(sentences)
+                plgt_idx.append(src_text['sentences'].index(sentences))
+        if (len(plgt_sentences) != 0):
+            print('ADAAAAAA')
+            is_plagiat = True
+        return plgt_sentences, plgt_idx, is_plagiat
     
     def get_keywords(self):
         return self.keywords
@@ -69,6 +82,7 @@ class SupportUtil():
             'compared_text': src_text['text'],
             'is_plagiarism': is_plagiat,
             'plagiarism_details': {
+                'src_id': src_text['id'],
                 'concat_substr': plagiat_item['concatenated_text'],
                 'list_substr': plagiat_item['sentences'],
                 'pos_text_src': plagiat_item['pos_text_src'],
@@ -85,29 +99,21 @@ class SupportUtil():
 
     def build_pairs_from_item(self, item):
         pairs = []
-        base_text = item['base_text']
+        base_text = item['base_text'].copy()
         generated_texts = item['generated_r_text']
         for g_text in generated_texts:
-            for plagiat_item in g_text['plagiarism_data']['plagiarism_items']:
-                for src_text in base_text:
-                    if (plagiat_item['src_id'] == src_text['id']):
-                        pairs.append(self.build_pair(g_text, src_text, plagiat_item, True))
-                        break
-                    elif (src_text['relevance'] == False):
-                        # check
-                        plgt_sentences = []
-                        plgt_idx = []
-                        is_plagiat = False
-                        for sentences in src_text['sentences']:
-                            if (sentences in g_text['text']) or (sentences in g_text['sentences']):
-                                plgt_sentences.append(sentences)
-                                plgt_idx.append(src_text['sentences'].index(sentences))
-                        if (len(plgt_sentences) != 0):
-                            print('ADAAAAAA')
-                            is_plagiat = True
-                        plgt_item = self.build_plagiat_item(g_text, src_text, plgt_sentences, plgt_idx, is_plagiat)
-                        pairs.append(self.build_pair(g_text, src_text, plgt_item, is_plagiat))
-                    else: continue
+            items = g_text['plagiarism_data']['plagiarism_items']
+            src_id_list = [item['src_id'] for item in items]
+            for src_text in base_text:
+                if (src_text['id'] in src_id_list):
+                    for item in items:
+                        if (item['src_id'] == src_text['id']):
+                            pairs.append(self.build_pair(g_text, src_text, item, True))
+                            break
+                else:
+                    plgt_sentences, plgt_idx, is_plagiat = self.__check_plagiarism(g_text, src_text)
+                    plgt_item = self.build_plagiat_item(g_text, src_text, plgt_sentences, plgt_idx, is_plagiat)
+                    pairs.append(self.build_pair(g_text, src_text, plgt_item, is_plagiat))
 
         return pairs
 
