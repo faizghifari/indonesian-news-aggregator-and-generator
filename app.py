@@ -25,7 +25,6 @@ PARSE_FAILED_MSG = os.getenv('PARSE_FAILED_MSG')
 if __name__ == "__main__":
     keywords = SupportUtil.get_keywords()
     items = []
-    base_items = []
     for keyword in keywords:
         raw_results = GoogleCSEHelper.search_and_get_results(keyword)
         base_text = []
@@ -41,22 +40,25 @@ if __name__ == "__main__":
                 base_text.append(check)
             else:
                 print('\n', PARSE_FAILED_MSG, '\n')
-        per_counter = 0
+        
         item = SupportUtil.build_item(keyword, base_text)
-        base_items.append(item)
-        item, per_counter = ArticleGeneratorHelper.generate_from_item(item, per_counter)
+        # item, per_counter = ArticleGeneratorHelper.generate_from_item(item, per_counter)
 
-        DumpUtil.dump_item_to_txt(item)
-        DumpUtil.dump_item_to_json(item)
+        # DumpUtil.dump_item_to_txt(item)
+        # DumpUtil.dump_item_to_json(item)
         
         items.append(item)
     
+    dict_obj = { 'items': items }
+    file_obj = open('base_example.json', 'w')
+    json.dump(dict_obj, file_obj)
+
+    print(items)
+    
+    per_counter = 0
+    items = ArticleGeneratorHelper.generate_from_items(items, per_counter)
     pairs = SupportUtil.build_pairs_from_items(items)
     for pair in pairs:
         DumpUtil.dump_pair_to_json(pair)
     DumpUtil.dump_pairs_to_json(pairs)
     DumpUtil.dump_items_to_json(items)
-
-    dict_obj = { 'items': base_items }
-    file_obj = open('base_example.json', 'w')
-    json.dump(dict_obj, file_obj)

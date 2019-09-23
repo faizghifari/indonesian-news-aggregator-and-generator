@@ -38,6 +38,7 @@ class NewsContentParser():
             res = re.sub('\[ .{1,3} \]', '', res)
             res = re.sub('\"(.+?)\"', '', res)
             res = res.replace('\n', ' ')
+            res = res.replace('\" ', '')
             return res
 
     def __find_content(self, tag, attr, attr_name):
