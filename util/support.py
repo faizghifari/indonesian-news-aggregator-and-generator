@@ -83,7 +83,7 @@ class SupportUtil():
             per_in_src = float(float(len(concat_substr) / len(src_text['text'])) * 100.0)
 
         return {
-            'concatenated_text': concat_substr,
+            # 'concatenated_text': concat_substr,
             'sentences': list_substr,
             'pos_text_src': pos_text_src,
             'per_in_text': per_in_text,
@@ -92,12 +92,11 @@ class SupportUtil():
     
     def build_pair(self, g_text, src_text, plagiat_item, is_plagiat):
         return {
-            'input_text': g_text['text'],
-            'compared_text': src_text['text'],
+            'generated_id': g_text['id'],
+            'src_id': src_text['id'],
             'is_plagiarism': is_plagiat,
             'plagiarism_details': {
-                'src_id': src_text['id'],
-                'concat_substr': plagiat_item['concatenated_text'],
+                # 'concat_substr': plagiat_item['concatenated_text'],
                 'list_substr': plagiat_item['sentences'],
                 'pos_text_src': plagiat_item['pos_text_src'],
                 'per_in_text': plagiat_item['per_in_text'],
