@@ -25,8 +25,9 @@ PARSE_FAILED_MSG = os.getenv('PARSE_FAILED_MSG')
 if __name__ == "__main__":
     keywords = SupportUtil.get_keywords()
     items = []
+    id_counter = 0
     for keyword in keywords:
-        raw_results = GoogleCSEHelper.search_and_get_results(keyword)
+        raw_results, id_counter = GoogleCSEHelper.search_and_get_results(keyword, id_counter)
         base_text = []
         for raw_result in raw_results:
             url = SupportUtil.resolve_url(raw_result['url'])
@@ -53,8 +54,6 @@ if __name__ == "__main__":
     file_obj = open('base_example.json', 'w')
     json.dump(dict_obj, file_obj)
 
-    print(items)
-    
     per_counter = 0
     items = ArticleGeneratorHelper.generate_from_items(items, per_counter)
     pairs = SupportUtil.build_pairs_from_items(items)

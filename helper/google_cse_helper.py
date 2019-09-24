@@ -37,7 +37,7 @@ class GoogleCSEHelper():
         sims = self.nlp_helper.sentence_similarity(titles, base)
         return sims
     
-    def __get_all_info(self, results, relevance_threshold):
+    def __get_all_info(self, results, relevance_threshold, id_counter):
         items = results['items']
         links = self.__get_links(items)
         titles = self.__get_titles(items)
@@ -47,7 +47,7 @@ class GoogleCSEHelper():
         all_info = []
         for i in range(len(items)):
             info = {
-                "id": i,
+                "id": id_counter,
                 "url": links[i],
                 "title": titles[i],
                 "base": i == 0,
@@ -55,8 +55,9 @@ class GoogleCSEHelper():
                 "relevance": float(sims[i]) > float(relevance_threshold)
             }
             all_info.append(info)
-        return all_info
+            id_counter += 1
+        return all_info, id_counter
     
-    def search_and_get_results(self, keyword):
+    def search_and_get_results(self, keyword, id_counter):
         search_res = self.__search(keyword)
-        return self.__get_all_info(search_res, self.threshold)
+        return self.__get_all_info(search_res, self.threshold, id_counter)
