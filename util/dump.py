@@ -71,3 +71,7 @@ class DumpUtil():
     def dump_pairs_to_json(self, pairs):
         dict_obj = { 'pairs': pairs }
         self.__dump_json('test_pairs.json', dict_obj)
+    
+    def dump_base_texts_to_json(self, base_texts):
+        dict_obj = { 'base_texts': base_texts }
+        self.__dump_json('base_text.json', dict_obj)

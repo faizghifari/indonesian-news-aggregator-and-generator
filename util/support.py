@@ -46,6 +46,13 @@ class SupportUtil():
             "sentences": results['parsed_sentences']
         }
     
+    def build_base_texts(self, items):
+        base_texts = []
+        for item in items:
+            for text in item['base_text']:
+                base_texts.append(text)
+        return base_texts
+    
     def build_item(self, keyword, base_text):
         return {
             "keyword": keyword,
