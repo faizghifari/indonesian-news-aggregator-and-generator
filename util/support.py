@@ -53,6 +53,13 @@ class SupportUtil():
                 base_texts.append(text)
         return base_texts
     
+    def build_generated_texts(self, items):
+        generated_texts = []
+        for item in items:
+            for text in item['generated_r_text']:
+                generated_texts.append(text)
+        return generated_texts
+    
     def build_item(self, keyword, base_text):
         return {
             "keyword": keyword,

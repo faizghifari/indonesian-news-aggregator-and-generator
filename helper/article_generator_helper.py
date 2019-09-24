@@ -59,7 +59,7 @@ class ArticleGeneratorHelper():
             n_sentences -= 1
             first = True
         
-        return min(n_sentences, len(sentences) - 1), first
+        return min(n_sentences, len(sentences) - 1), first, counter
     
     def __get_len_article(self, texts, opt='random'):
         if (opt == 'random'):
@@ -115,13 +115,13 @@ class ArticleGeneratorHelper():
         }
         return plagiarism_data
 
-    def __generate_article(self, texts, len_article, counter, opt='random'):
+    def __generate_article(self, texts, len_article, counter, id_counter, opt='random'):
         n_texts_remain = len(texts)
         combined_sentences = []
         for text in texts:
             sentences = text['sentences'].copy()
             n_texts_remain -= 1
-            n_sentences, first = self.__get_n_sentences(sentences, texts, counter, len_article, n_texts_remain, opt)
+            n_sentences, first, counter = self.__get_n_sentences(sentences, texts, counter, len_article, n_texts_remain, opt)
             if first:
                 combined_sentences.append(sentences[0])
             sentences.pop(0)
@@ -136,72 +136,40 @@ class ArticleGeneratorHelper():
         generated_text = ' . '.join(combined_sentences)
         plagiarism_data = self.__get_generated_info(generated_text, combined_sentences, texts)
         return {
+            "id": id_counter,
             "text": generated_text,
             "sentences": combined_sentences,
             "plagiarism_data": plagiarism_data
-        }, counter
+        }, counter, id_counter+1
 
-    def __generate_articles_v2(self, texts, counter):
+    def __generate_articles_v2(self, texts, counter, id_counter):
         n_articles = self.__get_n_articles(len(texts))
         generated_articles = []
         for _ in range(n_articles):
             n_texts = self.__get_n_texts(len(texts))
             chosen_texts = random.sample(texts, n_texts)
             len_article = self.__get_len_article(chosen_texts, opt='fixed')
-            article, counter = self.__generate_article(chosen_texts, len_article, counter, opt='fixed')
+            article, counter, id_counter = self.__generate_article(chosen_texts, len_article, counter, id_counter, opt='fixed')
             generated_articles.append(article)
 
-        return generated_articles, counter
-
-    def __generate_articles_v1(self, texts):
-        generated_articles = []
-        for i in range(len(texts)):
-            generated_text = ''
-            combined_sentences = []
-            start_idx = i
-            for j in range(len(texts)):
-                sentences = texts[start_idx]['sentences']
-                count_sentences = int(len(sentences) / len(texts))
-                if count_sentences == 0:
-                    count_sentences = 1
-                count_idx = int(count_sentences * j)
-                if count_idx >= len(sentences):
-                    count_idx = len(sentences) - 1
-                for _ in range(count_sentences):
-                    if generated_text != '':
-                        generated_text = ''.join([generated_text, ' . ', sentences[count_idx]])
-                    else:
-                        generated_text = sentences[count_idx]
-                    combined_sentences.append(sentences[count_idx])
-                    count_idx += 1
-                if (start_idx == len(texts) - 1):
-                    start_idx = 0
-                else:
-                    start_idx += 1
-            plagiarism_data = self.__get_generated_info(generated_text, combined_sentences, texts)
-            generated_articles.append({
-                "text": generated_text,
-                "sentences": combined_sentences,
-                "plagiarism_data": plagiarism_data
-            })
-        
-        return generated_articles
+        return generated_articles, counter, id_counter
     
-    def generate_from_item(self, raw_item, counter):
+    def generate_from_item(self, raw_item, counter, id_counter):
         item = raw_item
         base_text = item['base_text']
 
         relevance_texts, _ = self.__parse_based_on_relevancy(base_text)
 
-        generated_r_texts, counter = self.__generate_articles_v2(relevance_texts, counter)
+        generated_r_texts, counter, id_counter = self.__generate_articles_v2(relevance_texts, counter, id_counter)
         item['generated_r_text'] = generated_r_texts
-        return item, counter
+        return item, counter, id_counter
 
     def generate_from_items(self, raw_items, counter):
         items = raw_items
         data = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+        id_counter = 0
         for item in items:
-            item, counter = self.generate_from_item(item, counter)
+            item, counter, id_counter = self.generate_from_item(item, counter, id_counter)
             for article in item['generated_r_text']:
                 for plagiat_data in article['plagiarism_data']['plagiarism_items']:
                     data[int(round(plagiat_data['per_in_src'],-1) / 10)] += 1

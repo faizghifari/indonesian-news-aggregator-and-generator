@@ -58,8 +58,11 @@ if __name__ == "__main__":
     items = ArticleGeneratorHelper.generate_from_items(items, per_counter)  
     pairs = SupportUtil.build_pairs_from_items(items)
     base_texts = SupportUtil.build_base_texts(items)
+    generated_texts = SupportUtil.build_generated_texts(items)
+
     for pair in pairs:
         DumpUtil.dump_pair_to_json(pair)
+    DumpUtil.dump_g_texts_to_json(generated_texts)
     DumpUtil.dump_base_texts_to_json(base_texts)
     DumpUtil.dump_pairs_to_json(pairs)
     DumpUtil.dump_items_to_json(items)
