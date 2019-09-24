@@ -306,5 +306,14 @@
         "attr_name": "wsw",
         "use_descendants": true,
         "descendants_tag": "p"
+    },
+    {
+        "name": "Antara News",
+        "base_url": "antaranews.com",
+        "content_tag": "div",
+        "content_attr": "class",
+        "attr_name": "post-content",
+        "use_descendants": false,
+        "descendants_tag": null
     }]
 }
