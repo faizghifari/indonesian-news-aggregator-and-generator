@@ -1,30 +1,44 @@
 import os
 import json
+import requests
 
 from dotenv import load_dotenv
 from pathlib import Path
 
-ENV_PATH = Path('.') / '.env'
-load_dotenv(dotenv_path=ENV_PATH)
+env_path = Path('.') / '.env'
+load_dotenv(dotenv_path=env_path)
 
-from helper.article_generator_helper import ArticleGeneratorHelper
-from util.dump import DumpUtil
+from helper.google_cse_helper import GoogleCSEHelper
+
 from util.support import SupportUtil
 
-ArticleGeneratorHelper = ArticleGeneratorHelper()
-DumpUtil = DumpUtil()
+GoogleCSEHelper = GoogleCSEHelper()
 SupportUtil = SupportUtil()
 
+PARSE_FAILED_MSG = os.getenv('PARSE_FAILED_MSG')
+
 if __name__ == "__main__":
-    raw = {}
-    with open('base_example.json') as json_file:
-        raw = json.load(json_file)
-
-    items = raw['items']
-    per_counter = 0
-    items = ArticleGeneratorHelper.generate_from_items(items, per_counter)
-    pairs = SupportUtil.build_pairs_from_items(items)
-
-    # DumpUtil.dump_items_to_txt(items)
-    DumpUtil.dump_items_to_json(items)
-    DumpUtil.dump_pairs_to_json(pairs)
+    keywords = SupportUtil.get_keywords()
+    items = []
+    id_counter = 0
+    iteration = 0
+    for keyword in keywords:
+        print('KEYWORD: ', keyword)
+        print('ITERATION: ', iteration)
+        iteration += 1
+        raw_results, id_counter = GoogleCSEHelper.search_and_get_results(keyword, id_counter)
+        raw = []
+        for raw_result in raw_results:
+            url = SupportUtil.resolve_url(raw_result['url'])
+            raw_html = requests.get(url).content
+            print(url)
+            if (raw_html is not None):
+                raw.append(raw_html)
+            else:
+                print(PARSE_FAILED_MSG)
+        item = SupportUtil.build_item(keyword, raw)
+        items.append(item)
+            
+    dict_obj = { 'items': items }
+    file_obj = open('raw_html.json', 'w')
+    json.dump(dict_obj, file_obj)
