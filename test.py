@@ -26,19 +26,23 @@ if __name__ == "__main__":
         print('KEYWORD: ', keyword)
         print('ITERATION: ', iteration)
         iteration += 1
-        raw_results, id_counter = GoogleCSEHelper.search_and_get_results(keyword, id_counter)
-        raw = []
-        for raw_result in raw_results:
-            url = SupportUtil.resolve_url(raw_result['url'])
-            raw_html = requests.get(url).content
-            print(url)
-            if (raw_html is not None):
-                raw.append(raw_html)
-            else:
-                print(PARSE_FAILED_MSG)
-        item = SupportUtil.build_item(keyword, raw)
-        items.append(item)
+        search_res = GoogleCSEHelper.search_only(keyword)
+        # raw_results, id_counter = GoogleCSEHelper.search_and_get_results(keyword, id_counter)
+        # raw = []
+        # for raw_result in raw_results:
+        #     url = SupportUtil.resolve_url(raw_result['url'])
+        #     raw_html = requests.get(url, timeout=30).content
+        #     print(url)
+        #     if (raw_html is not None):
+        #         raw.append(raw_html)
+        #     else:
+        #         print(PARSE_FAILED_MSG)
+        # item = SupportUtil.build_item(keyword, raw)
+        items.append({
+            "keyword": keyword,
+            "search_res": search_res
+        })
             
     dict_obj = { 'items': items }
-    file_obj = open('raw_html.json', 'w')
+    file_obj = open('raw_cse_2.json', 'w')
     json.dump(dict_obj, file_obj)

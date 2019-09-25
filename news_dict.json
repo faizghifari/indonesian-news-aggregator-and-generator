@@ -315,5 +315,149 @@
         "attr_name": "post-content",
         "use_descendants": false,
         "descendants_tag": null
+    },
+    {
+        "name": "Kominfo",
+        "base_url": "kominfo.go.id",
+        "content_tag": "div",
+        "content_attr": "class",
+        "attr_name": "typography-block",
+        "use_descendants": true,
+        "descendants_tag": "p"
+    },
+    {
+        "name": "Satu Harapan News",
+        "base_url": "satuharapan.com",
+        "content_tag": "div",
+        "content_attr": "class",
+        "attr_name": "isiberita",
+        "use_descendants": true,
+        "descendants_tag": "p"
+    },
+    {
+        "name": "Nusantara TV",
+        "base_url": "nusantaratv.com",
+        "content_tag": "div",
+        "content_attr": "class",
+        "attr_name": "post-text",
+        "use_descendants": true,
+        "descendants_tag": "p"
+    },
+    {
+        "name": "Grid ID",
+        "base_url": "grid.id",
+        "content_tag": "div",
+        "content_attr": "class",
+        "attr_name": "read__article",
+        "use_descendants": true,
+        "descendants_tag": "p"
+    },
+    {
+        "name": "Cermati",
+        "base_url": "cermati.com",
+        "content_tag": "article",
+        "content_attr": "itemprop",
+        "attr_name": "articleBody",
+        "use_descendants": true,
+        "descendants_tag": "p"
+    },
+    {
+        "name": "Hukumonline",
+        "base_url": "hukumonline.com",
+        "content_tag": "div",
+        "content_attr": "itemprop",
+        "attr_name": "articleBody",
+        "use_descendants": true,
+        "descendants_tag": "p"
+    },
+    {
+        "name": "BNPB",
+        "base_url": "bnpb.go.id",
+        "content_tag": "div",
+        "content_attr": "class",
+        "attr_name": "article-content",
+        "use_descendants": true,
+        "descendants_tag": "p"
+    },
+    {
+        "name": "Mojok.co",
+        "base_url": "mojok.co",
+        "content_tag": "span",
+        "content_attr": "class",
+        "attr_name": "cb-itemprop",
+        "use_descendants": true,
+        "descendants_tag": "p"
+    },
+    {
+        "name": "Infia.co",
+        "base_url": "infia.co",
+        "content_tag": "div",
+        "content_attr": "class",
+        "attr_name": "news-content",
+        "use_descendants": true,
+        "descendants_tag": "p"
+    },
+    {
+        "name": "Brilio",
+        "base_url": "brilio.net",
+        "content_tag": "div",
+        "content_attr": "id",
+        "attr_name": "share-per-img",
+        "use_descendants": true,
+        "descendants_tag": "p"
+    },
+    {
+        "name": "Line TODAY",
+        "base_url": "today.line.me",
+        "content_tag": "article",
+        "content_attr": "class",
+        "attr_name": "article-content",
+        "use_descendants": true,
+        "descendants_tag": "p"
+    },
+    {
+        "name": "Islampos",
+        "base_url": "islampos.com",
+        "content_tag": "div",
+        "content_attr": "class",
+        "attr_name": "content-inner",
+        "use_descendants": true,
+        "descendants_tag": "p"
+    },
+    {
+        "name": "Kontan",
+        "base_url": "kontan.co.id",
+        "content_tag": "div",
+        "content_attr": "class",
+        "attr_name": "tmpt-desk-kon",
+        "use_descendants": true,
+        "descendants_tag": "p"
+    },
+    {
+        "name": "Katadata",
+        "base_url": "katadata.co.id",
+        "content_tag": "article",
+        "content_attr": "itemprop",
+        "attr_name": "articleBody",
+        "use_descendants": true,
+        "descendants_tag": "p"
+    },
+    {
+        "name": "GridOto",
+        "base_url": "gridoto.com",
+        "content_tag": "div",
+        "content_attr": "class",
+        "attr_name": "read__right",
+        "use_descendants": true,
+        "descendants_tag": "p"
+    },
+    {
+        "name": "Beritagar",
+        "base_url": "beritagar.id",
+        "content_tag": "div",
+        "content_attr": "class",
+        "attr_name": "content",
+        "use_descendants": true,
+        "descendants_tag": "p"
     }]
 }

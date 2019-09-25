@@ -71,14 +71,17 @@ class NewsContentParser():
         return processed_str
     
     def __parse_sentences(self, parsed_content):
-        parsed_sentences = parsed_content.split(' .')
-        for p in parsed_sentences:
-            if (len(p) < 50) or (p is None):
-                parsed_sentences.remove(p)
-        
-        parsed_sentences[:] = [self.__normalize_content(p) for p in parsed_sentences]
-        parsed_sentences = [p for p in parsed_sentences if p is not None]
-        return parsed_sentences
+        if parsed_content is not None:
+            parsed_sentences = parsed_content.split(' .')
+            for p in parsed_sentences:
+                if (len(p) < 50) or (p is None):
+                    parsed_sentences.remove(p)
+            
+            parsed_sentences[:] = [self.__normalize_content(p) for p in parsed_sentences]
+            parsed_sentences = [p for p in parsed_sentences if p is not None]
+            return parsed_sentences
+        else:
+            return None
 
     def __make_response(self, is_found, parsed_content, parsed_sentences):
         return {

@@ -60,6 +60,13 @@ class SupportUtil():
                 generated_texts.append(text)
         return generated_texts
     
+    def build_pairs(self, pairs):
+        pairs_only = []
+        for pair in pairs:
+            for temp in pair['pairs']:
+                pairs_only.append(temp)
+        return pairs_only
+    
     def build_item(self, keyword, base_text):
         return {
             "keyword": keyword,

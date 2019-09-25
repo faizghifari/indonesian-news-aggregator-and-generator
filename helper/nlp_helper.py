@@ -40,7 +40,7 @@ class NLPHelper():
             return None
         return response.json()
 
-    def sentence_similarity(self, sentences, sentence2, type_='sim', sem_type='lsa', document=False):
+    def sentence_similarity(self, sentences, sentence2, type_='sim', sem_type='doc2vec', document=False):
         json_input = {
             'text': sentences,
             'text2': sentence2,
