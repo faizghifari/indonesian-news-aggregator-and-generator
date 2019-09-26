@@ -70,12 +70,12 @@ class DumpUtil():
 
     def dump_pairs_to_json(self, pairs):
         dict_obj = { 'pairs': pairs }
-        self.__dump_json('test_pairs_1.json', dict_obj)
+        self.__dump_json('test_pairs_2.json', dict_obj)
     
     def dump_base_texts_to_json(self, base_texts):
         dict_obj = { 'base_texts': base_texts }
-        self.__dump_json('base_text_1.json', dict_obj)
+        self.__dump_json('base_text_2.json', dict_obj)
     
     def dump_g_texts_to_json(self, g_texts):
         dict_obj = { 'generated_texts': g_texts }
-        self.__dump_json('generated_text_1.json', dict_obj)
+        self.__dump_json('generated_text_2.json', dict_obj)

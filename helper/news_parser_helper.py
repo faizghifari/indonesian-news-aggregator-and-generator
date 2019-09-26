@@ -40,6 +40,8 @@ class NewsContentParser():
             res = res.replace('\n', ' ')
             res = res.replace('\" ', '')
             return res
+        else:
+            return None
 
     def __find_content(self, tag, attr, attr_name):
         content = self.soup.find(tag, {attr: attr_name})
@@ -59,7 +61,7 @@ class NewsContentParser():
             if ((('{' not in string and '}' not in string) and (string != '')) 
                 and (string is not None and 'Baca ' not in string)):
                 processed_str = ' '.join([processed_str, string])
-        processed_str = self.__normalize_content(processed_str)
+        # processed_str = self.__normalize_content(processed_str)
         return processed_str
 
     def __parse_descendants(self, descendants):
@@ -67,19 +69,21 @@ class NewsContentParser():
         for descendant in descendants:
             paragraph_str = self.__parse_content(descendant)
             if ((paragraph_str is not None) and ('Baca ' not in paragraph_str)):
-                processed_str = '\n'.join([processed_str, paragraph_str])
+                processed_str = ' '.join([processed_str, paragraph_str])
         return processed_str
     
     def __parse_sentences(self, parsed_content):
         if parsed_content is not None:
             parsed_sentences = parsed_content.split(' .')
-            for p in parsed_sentences:
-                if (len(p) < 50) or (p is None):
-                    parsed_sentences.remove(p)
-            
-            parsed_sentences[:] = [self.__normalize_content(p) for p in parsed_sentences]
-            parsed_sentences = [p for p in parsed_sentences if p is not None]
-            return parsed_sentences
+            # parsed_sentences[:] = [self.__normalize_content(p) for p in parsed_sentences]
+            parsed_sentences = [p for p in parsed_sentences if ((p is not None) and (len(p) > 50))]
+            # for p in parsed_sentences:
+            #     if (len(p) < 50) or (p is None):
+            #         parsed_sentences.remove(p)
+            if (len(parsed_sentences) > 2):
+                return parsed_sentences
+            else:
+                return None
         else:
             return None
 
@@ -105,11 +109,14 @@ class NewsContentParser():
         desc_tag = news_info['descendants_tag']
 
         if (is_desc and desc_tag is None):
-           content = self.__find_content_all(tag, attr, attr_name)
-           parsed_content = self.__parse_descendants(content)
-           parsed_content = self.__normalize_content(parsed_content)
-           parsed_sentences = self.__parse_sentences(parsed_content)
-           return self.__make_response(True, parsed_content, parsed_sentences)
+            content = self.__find_content_all(tag, attr, attr_name)
+            parsed_content = self.__parse_descendants(content)
+            parsed_content = self.__normalize_content(parsed_content)
+            parsed_sentences = self.__parse_sentences(parsed_content)
+            if (parsed_content is None) or (parsed_sentences is None):
+                return self.__not_found_response()
+            else:
+                return self.__make_response(True, parsed_content, parsed_sentences)
         
         content = self.__find_content(tag, attr, attr_name)
         if content is not None:
@@ -123,4 +130,7 @@ class NewsContentParser():
 
             parsed_content = self.__normalize_content(parsed_content)
             parsed_sentences = self.__parse_sentences(parsed_content)
-            return self.__make_response(True, parsed_content, parsed_sentences)
+            if (parsed_content is None) or (parsed_sentences is None):
+                return self.__not_found_response()
+            else:
+                return self.__make_response(True, parsed_content, parsed_sentences)

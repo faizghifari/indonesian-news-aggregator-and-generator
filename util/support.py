@@ -56,8 +56,11 @@ class SupportUtil():
     def build_generated_texts(self, items):
         generated_texts = []
         for item in items:
-            for text in item['generated_r_text']:
-                generated_texts.append(text)
+            try:
+                for text in item['generated_r_text']:
+                    generated_texts.append(text)
+            except KeyError:
+                pass
         return generated_texts
     
     def build_pairs(self, pairs):
@@ -120,30 +123,35 @@ class SupportUtil():
     def build_pairs_from_item(self, item):
         pairs = []
         base_text = item['base_text'].copy()
-        generated_texts = item['generated_r_text']
-        for g_text in generated_texts:
-            items = g_text['plagiarism_data']['plagiarism_items']
-            src_id_list = [item['src_id'] for item in items]
-            for src_text in base_text:
-                if (src_text['id'] in src_id_list):
-                    for item in items:
-                        if (item['src_id'] == src_text['id']):
-                            pairs.append(self.build_pair(g_text, src_text, item, True))
-                            break
-                else:
-                    plgt_sentences, plgt_idx, is_plagiat = self.__check_plagiarism(g_text, src_text)
-                    plgt_item = self.build_plagiat_item(g_text, src_text, plgt_sentences, plgt_idx, is_plagiat)
-                    pairs.append(self.build_pair(g_text, src_text, plgt_item, is_plagiat))
+        try:
+            generated_texts = item['generated_r_text']
+            for g_text in generated_texts:
+                items = g_text['plagiarism_data']['plagiarism_items']
+                src_id_list = [item['src_id'] for item in items]
+                for src_text in base_text:
+                    if (src_text['id'] in src_id_list):
+                        for item in items:
+                            if (item['src_id'] == src_text['id']):
+                                pairs.append(self.build_pair(g_text, src_text, item, True))
+                                break
+                    else:
+                        plgt_sentences, plgt_idx, is_plagiat = self.__check_plagiarism(g_text, src_text)
+                        plgt_item = self.build_plagiat_item(g_text, src_text, plgt_sentences, plgt_idx, is_plagiat)
+                        pairs.append(self.build_pair(g_text, src_text, plgt_item, is_plagiat))
 
-        return pairs
+            return pairs
+        except KeyError:
+            return None
+        
 
     def build_pairs_from_items(self, items):
         pairs = []
         count_pair = 0
         for item in items:
             pair = self.build_pairs_from_item(item)
-            count_pair += len(pair)
-            pairs.append(self.build_all_pairs(item['keyword'], pair))
+            if (pair is not None):
+                count_pair += len(pair)
+                pairs.append(self.build_all_pairs(item['keyword'], pair))
         print('NUM PAIRS GENERATED  :', count_pair)
         return pairs
 

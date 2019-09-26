@@ -24,7 +24,7 @@ PARSE_FAILED_MSG = os.getenv('PARSE_FAILED_MSG')
 
 if __name__ == "__main__":
     # keywords = SupportUtil.get_keywords()
-    with open('raw_cse_test.json') as f:
+    with open('raw_cse.json') as f:
         raw_cse = json.load(f)
     raw_results_cse = raw_cse['items']
     items = []
@@ -70,7 +70,7 @@ if __name__ == "__main__":
         items.append(item)
     
     dict_obj = { 'items': items }
-    file_obj = open('base_example_1.json', 'w')
+    file_obj = open('base_example_2.json', 'w')
     json.dump(dict_obj, file_obj)
 
     per_counter = 0

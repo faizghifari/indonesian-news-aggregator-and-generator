@@ -2,6 +2,9 @@ import requests
 import json
 import os
 
+from sklearn.feature_extraction.text import CountVectorizer
+from sklearn.metrics.pairwise import cosine_similarity
+
 
 class NLPHelper():
     """
@@ -52,6 +55,31 @@ class NLPHelper():
         if response.status_code != 200:
             return None
         return response.json()['similarity']
+    
+    def jaccard_similarity(self, str1, str2):
+        a = set(str1.split()) 
+        b = set(str2.split())
+        c = a.intersection(b)
+        return float(len(c)) / (len(a) + len(b) - len(c))
+    
+    def get_jaccard_similarity(self, sentences, sentence2):
+        sims = []
+        for sentence in sentences:
+            sims.append(self.jaccard_similarity(sentence2, sentence))
+        return sims
+    
+    def get_vector(self, sentences):
+        vectorizer = CountVectorizer()
+        vector = vectorizer.fit(sentences)
+        matrix = vectorizer.transform(sentences)
+        # print(vector.shape)
+        return vector, matrix
+
+    def get_cos_similarity(self, sentences, sentence2):
+        vector, matrix = self.get_vector(sentences)
+        base_vector = vector.transform([sentence2])
+        sims = cosine_similarity(base_vector, matrix)
+        return sims[0]
 
     def lemmatization(self, sentence):
         header = {

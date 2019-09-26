@@ -459,5 +459,419 @@
         "attr_name": "content",
         "use_descendants": true,
         "descendants_tag": "p"
+    },
+    {
+        "name": "The Asian Parent",
+        "base_url": "theasianparent.com",
+        "content_tag": "section",
+        "content_attr": "id",
+        "attr_name": "blogContentId",
+        "use_descendants": true,
+        "descendants_tag": "p"
+    },
+    {
+        "name": "GATRAcom",
+        "base_url": "gatra.com",
+        "content_tag": "div",
+        "content_attr": "class",
+        "attr_name": "text-left",
+        "use_descendants": true,
+        "descendants_tag": "p"
+    },
+    {
+        "name": "Matamata",
+        "base_url": "matamata.com",
+        "content_tag": "div",
+        "content_attr": "class",
+        "attr_name": "detail--content",
+        "use_descendants": true,
+        "descendants_tag": "p"
+    },
+    {
+        "name": "Fimela",
+        "base_url": "fimela.com",
+        "content_tag": "div",
+        "content_attr": "class",
+        "attr_name": "article-content-body__item-content",
+        "use_descendants": true,
+        "descendants_tag": "p"
+    },
+    {
+        "name": "Kapanlagi",
+        "base_url": "kapanlagi.com",
+        "content_tag": "div",
+        "content_attr": "class",
+        "attr_name": "body-paragraph",
+        "use_descendants": true,
+        "descendants_tag": "p"
+    },
+    {
+        "name": "Insert Live",
+        "base_url": "insertlive.com",
+        "content_tag": "div",
+        "content_attr": "class",
+        "attr_name": "text_detail",
+        "use_descendants": false,
+        "descendants_tag": null
+    },
+    {
+        "name": "Moneysmart",
+        "base_url": "moneysmart.id",
+        "content_tag": "div",
+        "content_attr": "class",
+        "attr_name": "dable-content-wrapper",
+        "use_descendants": true,
+        "descendants_tag": "p"
+    },
+    {
+        "name": "Kementerian Luar Negeri",
+        "base_url": "kemlu.go.id",
+        "content_tag": "div",
+        "content_attr": "class",
+        "attr_name": "ExternalClass1F02C6D1BC46402AACB248DC4174BBC1",
+        "use_descendants": true,
+        "descendants_tag": "div"
+    },
+    {
+        "name": "Berita satu",
+        "base_url": "beritasatu.com",
+        "content_tag": "div",
+        "content_attr": "itemprop",
+        "attr_name": "articleBody",
+        "use_descendants": true,
+        "descendants_tag": "p"
+    },
+    {
+        "name": "hitekno",
+        "base_url": "hitekno.com",
+        "content_tag": "div",
+        "content_attr": "class",
+        "attr_name": "detail--content",
+        "use_descendants": true,
+        "descendants_tag": "p"
+    },
+    {
+        "name": "asumsico",
+        "base_url": "asumsi.co",
+        "content_tag": "div",
+        "content_attr": "class",
+        "attr_name": "spost-detail",
+        "use_descendants": true,
+        "descendants_tag": "p"
+    },
+    {
+        "name": "MRT Jakarta",
+        "base_url": "jakartamrt.co.id",
+        "content_tag": "div",
+        "content_attr": "class",
+        "attr_name": "entry-content",
+        "use_descendants": true,
+        "descendants_tag": "p"
+    },
+    {
+        "name": "Siar",
+        "base_url": "siar.com",
+        "content_tag": "div",
+        "content_attr": "class",
+        "attr_name": "single",
+        "use_descendants": true,
+        "descendants_tag": "p"
+    },
+    {
+        "name": "Cek n Ricek",
+        "base_url": "ceknricek.com",
+        "content_tag": "div",
+        "content_attr": "class",
+        "attr_name": "content",
+        "use_descendants": true,
+        "descendants_tag": "p"
+    },
+    {
+        "name": "Indozone",
+        "base_url": "indozone.id",
+        "content_tag": "div",
+        "content_attr": "class",
+        "attr_name": "article_ct",
+        "use_descendants": false,
+        "descendants_tag": null
+    },
+    {
+        "name": "Indosport",
+        "base_url": "indosport.com",
+        "content_tag": "div",
+        "content_attr": "class",
+        "attr_name": "content-text",
+        "use_descendants": true,
+        "descendants_tag": "p"
+    },
+    {
+        "name": "RMOL Banten",
+        "base_url": "rmolbanten.com",
+        "content_tag": "div",
+        "content_attr": "class",
+        "attr_name": "newsContent",
+        "use_descendants": false,
+        "descendants_tag": null
+    },
+    {
+        "name": "Borneo 24",
+        "base_url": "borneo24.com",
+        "content_tag": "div",
+        "content_attr": "class",
+        "attr_name": "content-inner",
+        "use_descendants": true,
+        "descendants_tag": "p"
+    },
+    {
+        "name": "Mongabay",
+        "base_url": "mongabay.co.id",
+        "content_tag": "article",
+        "content_attr": "class",
+        "attr_name": "type-post",
+        "use_descendants": true,
+        "descendants_tag": "p"
+    },
+    {
+        "name": "Cosmopolitan",
+        "base_url": "cosmopolitan.co.id",
+        "content_tag": "div",
+        "content_attr": "class",
+        "attr_name": "artikel-txt",
+        "use_descendants": true,
+        "descendants_tag": "p"
+    },
+    {
+        "name": "Teras Maluku",
+        "base_url": "terasmaluku.com",
+        "content_tag": "div",
+        "content_attr": "class",
+        "attr_name": "col-md-sgl-m",
+        "use_descendants": true,
+        "descendants_tag": "p"
+    },
+    {
+        "name": "Indopos",
+        "base_url": "indopos.co.id",
+        "content_tag": "div",
+        "content_attr": "class",
+        "attr_name": "entry-content",
+        "use_descendants": true,
+        "descendants_tag": "p"
+    },
+    {
+        "name": "Mata Mata Politik",
+        "base_url": "matamatapolitik.com",
+        "content_tag": "div",
+        "content_attr": "id",
+        "attr_name": "content-main",
+        "use_descendants": true,
+        "descendants_tag": "p"
+    },
+    {
+        "name": "Hipwee",
+        "base_url": "hipwee.com",
+        "content_tag": "div",
+        "content_attr": "itemprop",
+        "attr_name": "articleBody",
+        "use_descendants": true,
+        "descendants_tag": "p"
+    },
+    {
+        "name": "Tagar",
+        "base_url": "tagar.id",
+        "content_tag": "div",
+        "content_attr": "id",
+        "attr_name": "content",
+        "use_descendants": true,
+        "descendants_tag": "p"
+    },
+    {
+        "name": "Ayo Bandung",
+        "base_url": "ayobandung.com",
+        "content_tag": "div",
+        "content_attr": "itemprop",
+        "attr_name": "articleBody",
+        "use_descendants": true,
+        "descendants_tag": "p"
+    },
+    {
+        "name": "Teras",
+        "base_url": "teras.id",
+        "content_tag": "div",
+        "content_attr": "itemprop",
+        "attr_name": "articleBody",
+        "use_descendants": true,
+        "descendants_tag": "p"
+    },
+    {
+        "name": "Kabarpolitik",
+        "base_url": "kabarpolitik.com",
+        "content_tag": "div",
+        "content_attr": "class",
+        "attr_name": "theiaPostSlider_preloadedSlide",
+        "use_descendants": true,
+        "descendants_tag": "p"
+    },
+    {
+        "name": "Medan Bisnis Daily",
+        "base_url": "medanbisnisdaily.com",
+        "content_tag": "div",
+        "content_attr": "class",
+        "attr_name": "header",
+        "use_descendants": true,
+        "descendants_tag": "p"
+    },
+    {
+        "name": "Sukabumi Update",
+        "base_url": "sukabumiupdate.com",
+        "content_tag": "div",
+        "content_attr": "class",
+        "attr_name": "right_isi_detail",
+        "use_descendants": true,
+        "descendants_tag": "p"
+    },
+    {
+        "name": "Nonstopnews",
+        "base_url": "nonstopnews.id",
+        "content_tag": "div",
+        "content_attr": "class",
+        "attr_name": "post-text",
+        "use_descendants": true,
+        "descendants_tag": "p"
+    },
+    {
+        "name": "Pos Kota News",
+        "base_url": "poskotanews.com",
+        "content_tag": "div",
+        "content_attr": "class",
+        "attr_name": "large-10",
+        "use_descendants": true,
+        "descendants_tag": "p"
+    },
+    {
+        "name": "Dream",
+        "base_url": "dream.co.id",
+        "content_tag": "div",
+        "content_attr": "class",
+        "attr_name": "detail-body",
+        "use_descendants": true,
+        "descendants_tag": "p"
+    },
+    {
+        "name": "Inilah",
+        "base_url": "inilah.com",
+        "content_tag": "div",
+        "content_attr": "class",
+        "attr_name": "article-content",
+        "use_descendants": true,
+        "descendants_tag": "p"
+    },
+    {
+        "name": "Sonora",
+        "base_url": "sonora.id",
+        "content_tag": "div",
+        "content_attr": "class",
+        "attr_name": "read__content",
+        "use_descendants": true,
+        "descendants_tag": "p"
+    },
+    {
+        "name": "Beritatrans",
+        "base_url": "beritatrans.com",
+        "content_tag": "div",
+        "content_attr": "class",
+        "attr_name": "single-body",
+        "use_descendants": true,
+        "descendants_tag": "p"
+    },
+    {
+        "name": "Rakyatku",
+        "base_url": "rakyatku.com",
+        "content_tag": "div",
+        "content_attr": "class",
+        "attr_name": "content-detail",
+        "use_descendants": true,
+        "descendants_tag": "p"
+    },
+    {
+        "name": "Suara Merdeka",
+        "base_url": "suaramerdeka.com",
+        "content_tag": "div",
+        "content_attr": "class",
+        "attr_name": "news-details-layout1",
+        "use_descendants": true,
+        "descendants_tag": "p"
+    },
+    {
+        "name": "Investor ID",
+        "base_url": "investor.id",
+        "content_tag": "div",
+        "content_attr": "class",
+        "attr_name": "body-article",
+        "use_descendants": true,
+        "descendants_tag": "p"
+    },
+    {
+        "name": "VICE",
+        "base_url": "vice.com",
+        "content_tag": "div",
+        "content_attr": "class",
+        "attr_name": "article__body",
+        "use_descendants": true,
+        "descendants_tag": "p"
+    },
+    {
+        "name": "WOW Keren",
+        "base_url": "wowkeren.com",
+        "content_tag": "div",
+        "content_attr": "itemprop",
+        "attr_name": "articleBody",
+        "use_descendants": true,
+        "descendants_tag": "p"
+    },
+    {
+        "name": "Go Riau",
+        "base_url": "goriau.com",
+        "content_tag": "div",
+        "content_attr": "class",
+        "attr_name": "post-content",
+        "use_descendants": true,
+        "descendants_tag": "div"
+    },
+    {
+        "name": "POP Mama",
+        "base_url": "popmama.com",
+        "content_tag": "div",
+        "content_attr": "class",
+        "attr_name": "single-article-content",
+        "use_descendants": true,
+        "descendants_tag": "p"
+    },
+    {
+        "name": "mubaadalahnews",
+        "base_url": "mubaadalahnews.com",
+        "content_tag": "div",
+        "content_attr": "class",
+        "attr_name": "text",
+        "use_descendants": true,
+        "descendants_tag": "p"
+    },
+    {
+        "name": "Kiblat",
+        "base_url": "kiblat.net",
+        "content_tag": "div",
+        "content_attr": "class",
+        "attr_name": "entry-content",
+        "use_descendants": true,
+        "descendants_tag": "p"
+    },
+    {
+        "name": "wartaekonomi",
+        "base_url": "wartaekonomi.co.id",
+        "content_tag": "div",
+        "content_attr": "itemprop",
+        "attr_name": "articleBody",
+        "use_descendants": true,
+        "descendants_tag": "p"
     }]
 }

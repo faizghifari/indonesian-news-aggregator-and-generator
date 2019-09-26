@@ -35,8 +35,9 @@ class GoogleCSEHelper():
 
     def __get_titles_similarity(self, base, titles):
         print('CALCULATING SIMILARITY ...')
-        sims = self.nlp_helper.sentence_similarity(titles, base)
+        sims = self.nlp_helper.get_cos_similarity(titles, base)
         print('FINISH CALCULATION')
+        print(sims)
         return sims
     
     def __get_all_info(self, results, relevance_threshold, id_counter):
