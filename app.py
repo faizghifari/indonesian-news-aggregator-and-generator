@@ -23,7 +23,6 @@ DumpUtil = DumpUtil()
 PARSE_FAILED_MSG = os.getenv('PARSE_FAILED_MSG')
 
 if __name__ == "__main__":
-    # keywords = SupportUtil.get_keywords()
     with open('raw_cse_1.json') as f:
         raw_cse = json.load(f)
     raw_results_cse = raw_cse['items']
@@ -62,27 +61,19 @@ if __name__ == "__main__":
                 print('\n', PARSE_FAILED_MSG, '\n')
         
         item = SupportUtil.build_item(keyword, base_text)
-        # item, per_counter = ArticleGeneratorHelper.generate_from_item(item, per_counter)
-
-        # DumpUtil.dump_item_to_txt(item)
-        # DumpUtil.dump_item_to_json(item)
-        
         items.append(item)
     
-    dict_obj = { 'items': items }
-    file_obj = open('base_example_2.json', 'w')
-    json.dump(dict_obj, file_obj)
+    DumpUtil.dump_to_json(items, 'items', 'base_examples.json')
 
     per_counter = 0
+
     items = ArticleGeneratorHelper.generate_from_items(items, per_counter)  
     pairs = SupportUtil.build_pairs_from_items(items)
     base_texts = SupportUtil.build_base_texts(items)
     generated_texts = SupportUtil.build_generated_texts(items)
     pairs = SupportUtil.build_pairs(pairs)
 
-    # for pair in pairs:
-    #     DumpUtil.dump_pair_to_json(pair)
-    DumpUtil.dump_g_texts_to_json(generated_texts)
-    DumpUtil.dump_base_texts_to_json(base_texts)
-    DumpUtil.dump_pairs_to_json(pairs)
-    DumpUtil.dump_items_to_json(items)
+    DumpUtil.dump_to_json(generated_texts, 'generated_texts', 'generated_text.json')
+    DumpUtil.dump_to_json(base_texts, 'base_texts', 'base_text.json')
+    DumpUtil.dump_to_json(pairs, 'pairs', 'pairs.json')
+    DumpUtil.dump_to_json(items, 'items', 'all.json')

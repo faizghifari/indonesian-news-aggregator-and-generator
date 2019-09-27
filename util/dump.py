@@ -44,8 +44,10 @@ class DumpUtil():
     def dump_item_to_txt(self, item):
         keyword = item['keyword']
         self.__dump_based_on_type(keyword, item, 'base_text')
-        self.__dump_based_on_type(keyword, item, 'generated_r_text')
-        # self.__dump_based_on_type(keyword, item, 'generated_ir_text')
+        try:
+            self.__dump_based_on_type(keyword, item, 'generated_r_text')
+        except KeyError:
+            pass
     
     def dump_item_to_json(self, item):
         keyword = item['keyword']
@@ -57,6 +59,10 @@ class DumpUtil():
         for item in items:
             self.dump_item_to_txt(item)
     
+    def dump_to_json(self, obj, key, path):
+        dict_obj = { key: obj }
+        self.__dump_json(path, dict_obj)
+    
     def dump_items_to_json(self, items):
         dict_obj = {}
         dict_obj['items'] = items
@@ -67,15 +73,3 @@ class DumpUtil():
         dir_path = self.__resolve_dir_path(keyword)
         filename = keyword.replace(' ', '-') + '-pairs' + '.json'
         self.__dump_json(dir_path + filename, pair)
-
-    def dump_pairs_to_json(self, pairs):
-        dict_obj = { 'pairs': pairs }
-        self.__dump_json('test_pairs_2.json', dict_obj)
-    
-    def dump_base_texts_to_json(self, base_texts):
-        dict_obj = { 'base_texts': base_texts }
-        self.__dump_json('base_text_2.json', dict_obj)
-    
-    def dump_g_texts_to_json(self, g_texts):
-        dict_obj = { 'generated_texts': g_texts }
-        self.__dump_json('generated_text_2.json', dict_obj)

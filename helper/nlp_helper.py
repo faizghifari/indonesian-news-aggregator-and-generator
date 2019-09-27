@@ -42,19 +42,6 @@ class NLPHelper():
         if response.status_code != 200:
             return None
         return response.json()
-
-    def sentence_similarity(self, sentences, sentence2, type_='sim', sem_type='doc2vec', document=False):
-        json_input = {
-            'text': sentences,
-            'text2': sentence2,
-            'types': type_,
-            'sem_type': sem_type,
-            'document': document
-        }
-        response = self.__create_request(self.endpoints['sentence_similarity'], json_input)
-        if response.status_code != 200:
-            return None
-        return response.json()['similarity']
     
     def jaccard_similarity(self, str1, str2):
         a = set(str1.split()) 
@@ -72,7 +59,6 @@ class NLPHelper():
         vectorizer = CountVectorizer()
         vector = vectorizer.fit(sentences)
         matrix = vectorizer.transform(sentences)
-        # print(vector.shape)
         return vector, matrix
 
     def get_cos_similarity(self, sentences, sentence2):
@@ -80,6 +66,27 @@ class NLPHelper():
         base_vector = vector.transform([sentence2])
         sims = cosine_similarity(base_vector, matrix)
         return sims[0]
+    
+    def get_doc2vec_similarity(self, sentences, sentence2, type_='sim', sem_type='doc2vec', document=False):
+        json_input = {
+            'text': sentences,
+            'text2': sentence2,
+            'types': type_,
+            'sem_type': sem_type,
+            'document': document
+        }
+        response = self.__create_request(self.endpoints['sentence_similarity'], json_input)
+        if response.status_code != 200:
+            return None
+        return response.json()['similarity']
+    
+    def sentence_similarity(self, sentences, sentence2, method='cos'):
+        if (method == 'cos'):
+            return self.get_cos_similarity(sentences, sentence2)
+        elif (method == 'jaccard'):
+            return self.get_jaccard_similarity(sentences, sentence2)
+        else:
+            return self.get_doc2vec_similarity(sentences, sentence2)
 
     def lemmatization(self, sentence):
         header = {

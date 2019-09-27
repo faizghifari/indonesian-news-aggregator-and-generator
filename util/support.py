@@ -21,7 +21,7 @@ class SupportUtil():
                 plgt_sentences.append(sentences)
                 plgt_idx.append(src_text['sentences'].index(sentences))
         if (len(plgt_sentences) != 0):
-            print('ADAAAAAA')
+            print('PLAGIARISM DETECTED')
             is_plagiat = True
         return plgt_sentences, plgt_idx, is_plagiat
     
@@ -93,7 +93,6 @@ class SupportUtil():
             per_in_src = float(float(len(concat_substr) / len(src_text['text'])) * 100.0)
 
         return {
-            # 'concatenated_text': concat_substr,
             'sentences': list_substr,
             'pos_text_src': pos_text_src,
             'per_in_text': per_in_text,
@@ -106,7 +105,6 @@ class SupportUtil():
             'src_id': src_text['id'],
             'is_plagiarism': is_plagiat,
             'plagiarism_details': {
-                # 'concat_substr': plagiat_item['concatenated_text'],
                 'list_substr': plagiat_item['sentences'],
                 'pos_text_src': plagiat_item['pos_text_src'],
                 'per_in_text': plagiat_item['per_in_text'],
