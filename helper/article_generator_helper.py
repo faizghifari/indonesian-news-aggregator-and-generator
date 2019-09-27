@@ -31,7 +31,7 @@ class ArticleGeneratorHelper():
     
     def __get_n_articles(self, lent, opt='random'):
         if (opt == 'random'):
-            return random.randint(lent, self.max_n_articles)
+            return random.randint(lent+3, self.max_n_articles)
         else:
             return self.num_articles
     

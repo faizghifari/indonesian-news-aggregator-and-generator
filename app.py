@@ -24,7 +24,7 @@ PARSE_FAILED_MSG = os.getenv('PARSE_FAILED_MSG')
 
 if __name__ == "__main__":
     # keywords = SupportUtil.get_keywords()
-    with open('raw_cse.json') as f:
+    with open('raw_cse_1.json') as f:
         raw_cse = json.load(f)
     raw_results_cse = raw_cse['items']
     items = []
