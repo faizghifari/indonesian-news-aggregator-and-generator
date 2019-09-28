@@ -31,14 +31,14 @@ class ArticleGeneratorHelper():
     
     def __get_n_articles(self, lent, opt='random'):
         if (opt == 'random'):
-            return random.randint(lent+3, self.max_n_articles)
+            return random.randint(lent, self.max_n_articles)
         else:
             return self.num_articles
     
     def __get_n_texts(self, lent, opt='random'):
         if (opt == 'random'):
             try:
-                return random.randint(self.min_n_texts, lent)
+                return random.randint(self.min_n_texts, lent-2)
             except ValueError:
                 return min(lent, self.num_texts)
             
