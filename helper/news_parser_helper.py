@@ -37,9 +37,9 @@ class NewsContentParser():
         if res is not None:
             res = re.sub('\[ .{1,3} \]', '', res)
             res = re.sub('\"(.+?)\"', '', res)
+            res = re.sub('((http|https)\:\/\/)?[a-zA-Z0-9\.\/\?\:@\-_=#]+\.([a-zA-Z]){2,6}([a-zA-Z0-9\.\&\/\?\:@\-_=#])*', '', res)
             res = res.replace('\n', ' ')
             res = res.replace('\" ', '')
-            res = res.findall('http[s]?://(?:[a-zA-Z]|[0-9]|[$-_@.&+] |[!*\(\), ]|(?:%[0-9a-fA-F][0-9a-fA-F]))+', '') 
             return res
         else:
             return None
