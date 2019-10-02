@@ -82,7 +82,6 @@ class ArticleGeneratorHelper():
                 pass
         src_text = ' . '.join(src_sentences)
         return {
-            "text": src_text,
             "sentences": src_sentences,
             "pos_text_src": pos_text_src,
             "sum_len_text": len(src_text)
@@ -90,12 +89,10 @@ class ArticleGeneratorHelper():
 
     def __get_plagiarism_details(self, g_text, combined_sentences, text):
         text_details = self.__get_text_details(combined_sentences, text)
-        copied_text = text_details['text']
         sum_len_text = text_details['sum_len_text']
         return {
             "src_id": text['id'],
             "src_url": text['url'],
-            "concatenated_text": copied_text,
             "sentences": text_details['sentences'],
             "pos_text_src": text_details['pos_text_src'],
             "per_in_text": float(float(sum_len_text / len(g_text)) * 100.0),
